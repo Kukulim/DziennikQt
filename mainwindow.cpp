@@ -136,7 +136,6 @@ void MainWindow::PrzywrocDomyslne()
     auto listItem = ui->listWidget->currentItem();
     auto wpis = wpisMapa.value(listItem);
     ui->dataEdit->setDate(wpis->getDataCwiczenia());
-    ui->objetosccalaEdit->setText(QString::number(wpis->getObjetoscTreningu()));
     ui->nazwacwEdit->setText(wpis->getNazwaCwiczenia(0));
     ui->nazwacwEdit_2->setText(wpis->getNazwaCwiczenia(1));
     ui->nazwacwEdit_3->setText(wpis->getNazwaCwiczenia(2));
@@ -217,10 +216,12 @@ void MainWindow::WyswietlObjetosc()
 {
     auto listItem = ui->listWidget->currentItem();
     auto wpis = wpisMapa.value(listItem);
-    for (int i = 0 ;i<13;i++) {
+    for (int i = 0 ;i<12;i++) {
         wpis->setObjetoscCwiczenia(i);
     }
     Okzapisz();
+    wpis->resetObjetoscTreningu();
+    wpis->setObjetoscTreningu();
     on_actionEdytuj_triggered();
     ui->objetoscEdit->setText(QString::number(wpis->getObjetoscCwiczenia(0)));
     ui->objetoscEdit_2->setText(QString::number(wpis->getObjetoscCwiczenia(1)));

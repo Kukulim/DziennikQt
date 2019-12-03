@@ -78,10 +78,15 @@ int Kontener::getObjetoscTreningu() const
 
 void Kontener::setObjetoscTreningu()
 {
-    for (int i = 0; i<12 ;++i)
+    for (int i = 0; i<12 ;i++)
     {
-        objetoscTreningu+=getObjetoscCwiczenia(i);
+        objetoscTreningu+=objetoscCwiczenia[i];
     }
+}
+
+void Kontener::resetObjetoscTreningu()
+{
+    objetoscTreningu=0;
 }
 
 bool Kontener::getCzyZaliczone(int miejsceWTablicy) const
