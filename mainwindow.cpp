@@ -220,28 +220,35 @@ void MainWindow::PrzywrocDomyslne()
 
 void MainWindow::WyswietlObjetosc()
 {
-    auto listItem = ui->listWidget->currentItem();
-    auto wpis = wpisMapa.value(listItem);
-    for (int i = 0 ;i<12;i++) {
-        wpis->setObjetoscCwiczenia(i);
-    }
-    Okzapisz();
-    wpis->resetObjetoscTreningu();
-    wpis->setObjetoscTreningu();
-    on_actionEdytuj_triggered();
-    ui->objetoscEdit->setText(QString::number(wpis->getObjetoscCwiczenia(0)));
-    ui->objetoscEdit_2->setText(QString::number(wpis->getObjetoscCwiczenia(1)));
-    ui->objetoscEdit_3->setText(QString::number(wpis->getObjetoscCwiczenia(2)));
-    ui->objetoscEdit_4->setText(QString::number(wpis->getObjetoscCwiczenia(3)));
-    ui->objetoscEdit_5->setText(QString::number(wpis->getObjetoscCwiczenia(4)));
-    ui->objetoscEdit_6->setText(QString::number(wpis->getObjetoscCwiczenia(5)));
-    ui->objetoscEdit_7->setText(QString::number(wpis->getObjetoscCwiczenia(6)));
-    ui->objetoscEdit_8->setText(QString::number(wpis->getObjetoscCwiczenia(7)));
-    ui->objetoscEdit_9->setText(QString::number(wpis->getObjetoscCwiczenia(8)));
-    ui->objetoscEdit_10->setText(QString::number(wpis->getObjetoscCwiczenia(9)));
-    ui->objetoscEdit_11->setText(QString::number(wpis->getObjetoscCwiczenia(10)));
-    ui->objetoscEdit_12->setText(QString::number(wpis->getObjetoscCwiczenia(11)));
-    ui->objetosccalaEdit->setText(QString::number(wpis->getObjetoscTreningu()));
+
+    ui->objetoscEdit->setText(QString::number((ui->iloscserEdit->currentIndex()+1)*(ui->iloscserEdit->currentIndex()+1)*ui->ciezarEdit->text().toInt()));
+    ui->objetoscEdit_2->setText(QString::number((ui->iloscserEdit_3->currentIndex()+1)*(ui->iloscserEdit_3->currentIndex()+1)*ui->ciezarEdit_3->text().toInt()));
+    ui->objetoscEdit_3->setText(QString::number((ui->iloscserEdit_4->currentIndex()+1)*(ui->iloscserEdit_4->currentIndex()+1)*ui->ciezarEdit_4->text().toInt()));
+    ui->objetoscEdit_4->setText(QString::number((ui->iloscserEdit_5->currentIndex()+1)*(ui->iloscserEdit_5->currentIndex()+1)*ui->ciezarEdit_5->text().toInt()));
+    ui->objetoscEdit_5->setText(QString::number((ui->iloscserEdit_6->currentIndex()+1)*(ui->iloscserEdit_6->currentIndex()+1)*ui->ciezarEdit_6->text().toInt()));
+    ui->objetoscEdit_6->setText(QString::number((ui->iloscserEdit_7->currentIndex()+1)*(ui->iloscserEdit_7->currentIndex()+1)*ui->ciezarEdit_7->text().toInt()));
+    ui->objetoscEdit_7->setText(QString::number((ui->iloscserEdit_8->currentIndex()+1)*(ui->iloscserEdit_8->currentIndex()+1)*ui->ciezarEdit_8->text().toInt()));
+    ui->objetoscEdit_8->setText(QString::number((ui->iloscserEdit_9->currentIndex()+1)*(ui->iloscserEdit_9->currentIndex()+1)*ui->ciezarEdit_9->text().toInt()));
+    ui->objetoscEdit_9->setText(QString::number((ui->iloscserEdit_10->currentIndex()+1)*(ui->iloscserEdit_10->currentIndex()+1)*ui->ciezarEdit_10->text().toInt()));
+    ui->objetoscEdit_10->setText(QString::number((ui->iloscserEdit_11->currentIndex()+1)*(ui->iloscserEdit_11->currentIndex()+1)*ui->ciezarEdit_11->text().toInt()));
+    ui->objetoscEdit_11->setText(QString::number((ui->iloscserEdit_12->currentIndex()+1)*(ui->iloscserEdit_12->currentIndex()+1)*ui->ciezarEdit_12->text().toInt()));
+    ui->objetoscEdit_12->setText(QString::number((ui->iloscserEdit_13->currentIndex()+1)*(ui->iloscserEdit_13->currentIndex()+1)*ui->ciezarEdit_13->text().toInt()));
+
+    int suma=0;
+    suma=(ui->objetoscEdit->text().toInt()+
+          ui->objetoscEdit_2->text().toInt()+
+          ui->objetoscEdit_3->text().toInt()+
+          ui->objetoscEdit_4->text().toInt()+
+          ui->objetoscEdit_5->text().toInt()+
+          ui->objetoscEdit_6->text().toInt()+
+          ui->objetoscEdit_7->text().toInt()+
+          ui->objetoscEdit_8->text().toInt()+
+          ui->objetoscEdit_9->text().toInt()+
+          ui->objetoscEdit_10->text().toInt()+
+          ui->objetoscEdit_11->text().toInt()+
+          ui->objetoscEdit_12->text().toInt());
+
+    ui->objetosccalaEdit->setText(QString::number(suma));
 }
 
 void MainWindow::wlaczPolaczenia()
