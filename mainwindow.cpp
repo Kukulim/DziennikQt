@@ -3,6 +3,7 @@
 
 #include <QPushButton>
 #include <QString>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -34,9 +35,14 @@ void MainWindow::on_actionUsun_triggered()
 {
     auto listItem = ui->listWidget->currentItem();
     auto wpis = wpisMapa.value(listItem);
+    QMessageBox::StandardButton sprawdz;
+    sprawdz = QMessageBox::question(this,"Dziennik treningowy","Czy usunac trening?",QMessageBox::Yes | QMessageBox::No);
+    if(sprawdz == QMessageBox::Yes)
+    {
     m_ksiazka.skasujKontener(wpis);
     wpisMapa.remove(listItem);
     delete listItem;
+    }
 
 }
 
