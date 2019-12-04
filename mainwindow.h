@@ -35,10 +35,13 @@ private slots:
     void WyswietlObjetosc();
 
 
+    void on_actionDodaj_trening_cardio_triggered();
+
 private:
     Ui::MainWindow *ui;
     KsiazkaKontener m_ksiazka;
     QHash<QListWidgetItem*,Kontener*> wpisMapa;
+    QHash<QListWidgetItem*,KontenerCardio*> wpisMapaCardio;
 
     void wlaczPolaczenia();
 

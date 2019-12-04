@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QVector>
 #include "kontener.h"
+#include "kontenercardio.h"
 
 class KsiazkaKontener : public QObject
 {
@@ -11,9 +12,15 @@ class KsiazkaKontener : public QObject
 public:
     explicit KsiazkaKontener(QObject *parent = nullptr);
     QVector<Kontener*> wynikWKsiazce;
+    QVector<KontenerCardio*> wynikWKsiazceCardio;
 
     Kontener* stwozKontener();
     void skasujKontener(Kontener* wpis);
+
+    KontenerCardio* stwozKontenerCardio();
+    void skasujKontenerCardio(KontenerCardio* wpis);
+
+
 
 signals:
 

@@ -2306,6 +2306,117 @@
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="page_3">
+       <layout class="QFormLayout" name="formLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Rodzaj cwiczenia:     </string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QComboBox" name="comboBox">
+          <property name="maximumSize">
+           <size>
+            <width>200</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <item>
+           <property name="text">
+            <string>Bieganie</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Spacer</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Jazda na rowerze</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Plywanie</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>Dystans:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="lineEdit">
+          <property name="maximumSize">
+           <size>
+            <width>150</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="placeholderText">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>Czas trwania:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QTimeEdit" name="timeEdit">
+          <property name="maximumSize">
+           <size>
+            <width>75</width>
+            <height>16777215</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>Data:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QDateEdit" name="dateEdit">
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="calendarPopup">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QDialogButtonBox" name="buttonBox_2">
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="standardButtons">
+           <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -2352,6 +2463,83 @@
    </property>
   </action>
  </widget>
+ <tabstops>
+  <tabstop>iloscpowEdit_12</tabstop>
+  <tabstop>iloscpowEdit_11</tabstop>
+  <tabstop>iloscserEdit_13</tabstop>
+  <tabstop>iloscserEdit_9</tabstop>
+  <tabstop>nazwacwEdit</tabstop>
+  <tabstop>objetoscEdit_9</tabstop>
+  <tabstop>iloscpowEdit_3</tabstop>
+  <tabstop>objetoscEdit_7</tabstop>
+  <tabstop>iloscserEdit_10</tabstop>
+  <tabstop>iloscpowEdit_13</tabstop>
+  <tabstop>iloscserEdit_4</tabstop>
+  <tabstop>ciezarEdit_12</tabstop>
+  <tabstop>czyzaliczonecw_10</tabstop>
+  <tabstop>iloscserEdit_6</tabstop>
+  <tabstop>iloscpowEdit_10</tabstop>
+  <tabstop>czyzaliczonecw_6</tabstop>
+  <tabstop>ciezarEdit_4</tabstop>
+  <tabstop>czyzaliczonecw_5</tabstop>
+  <tabstop>nazwacwEdit_9</tabstop>
+  <tabstop>ciezarEdit_3</tabstop>
+  <tabstop>ciezarEdit_6</tabstop>
+  <tabstop>objetoscEdit_5</tabstop>
+  <tabstop>ciezarEdit_10</tabstop>
+  <tabstop>objetoscEdit_3</tabstop>
+  <tabstop>nazwacwEdit_6</tabstop>
+  <tabstop>ciezarEdit_13</tabstop>
+  <tabstop>objetoscEdit_8</tabstop>
+  <tabstop>ciezarEdit_8</tabstop>
+  <tabstop>ciezarEdit_9</tabstop>
+  <tabstop>czyzaliczonecw_12</tabstop>
+  <tabstop>czyzaliczonecw_8</tabstop>
+  <tabstop>objetosccalaEdit</tabstop>
+  <tabstop>iloscserEdit_12</tabstop>
+  <tabstop>objetoscEdit_11</tabstop>
+  <tabstop>ciezarEdit_5</tabstop>
+  <tabstop>iloscserEdit_8</tabstop>
+  <tabstop>ciezarEdit_7</tabstop>
+  <tabstop>czyzaliczonecw_2</tabstop>
+  <tabstop>nazwacwEdit_7</tabstop>
+  <tabstop>czyzaliczonecw_3</tabstop>
+  <tabstop>iloscpowEdit_7</tabstop>
+  <tabstop>objetoscEdit_10</tabstop>
+  <tabstop>czyzaliczonecw</tabstop>
+  <tabstop>iloscpowEdit</tabstop>
+  <tabstop>iloscpowEdit_5</tabstop>
+  <tabstop>ciezarEdit_11</tabstop>
+  <tabstop>nazwacwEdit_8</tabstop>
+  <tabstop>iloscserEdit_7</tabstop>
+  <tabstop>nazwacwEdit_2</tabstop>
+  <tabstop>nazwacwEdit_12</tabstop>
+  <tabstop>nazwacwEdit_4</tabstop>
+  <tabstop>nazwacwEdit_11</tabstop>
+  <tabstop>iloscserEdit_11</tabstop>
+  <tabstop>iloscpowEdit_8</tabstop>
+  <tabstop>objetoscEdit</tabstop>
+  <tabstop>objetoscEdit_4</tabstop>
+  <tabstop>nazwacwEdit_5</tabstop>
+  <tabstop>nazwacwEdit_10</tabstop>
+  <tabstop>czyzaliczonecw_9</tabstop>
+  <tabstop>objetoscEdit_12</tabstop>
+  <tabstop>czyzaliczonecw_7</tabstop>
+  <tabstop>nazwacwEdit_3</tabstop>
+  <tabstop>czyzaliczonecw_11</tabstop>
+  <tabstop>iloscpowEdit_4</tabstop>
+  <tabstop>objetoscEdit_2</tabstop>
+  <tabstop>iloscserEdit_3</tabstop>
+  <tabstop>dataEdit</tabstop>
+  <tabstop>iloscpowEdit_6</tabstop>
+  <tabstop>iloscserEdit</tabstop>
+  <tabstop>czyzaliczonecw_4</tabstop>
+  <tabstop>iloscpowEdit_9</tabstop>
+  <tabstop>ciezarEdit</tabstop>
+  <tabstop>iloscserEdit_5</tabstop>
+  <tabstop>listWidget</tabstop>
+  <tabstop>objetoscEdit_6</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

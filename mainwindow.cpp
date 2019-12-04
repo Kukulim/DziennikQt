@@ -31,17 +31,41 @@ void MainWindow::on_actionDodaj_triggered()
 
 }
 
+void MainWindow::on_actionDodaj_trening_cardio_triggered()
+{
+    auto wpisekcardio = m_ksiazka.stwozKontenerCardio();
+    ui->listWidget->addItem(wpisekcardio->getNazwaTreningu());
+    auto listItem = ui->listWidget->item(ui->listWidget->count()-1);
+    wpisMapaCardio.insert(listItem, wpisekcardio);
+}
+
 void MainWindow::on_actionUsun_triggered()
 {
     auto listItem = ui->listWidget->currentItem();
     auto wpis = wpisMapa.value(listItem);
-    QMessageBox::StandardButton sprawdz;
-    sprawdz = QMessageBox::question(this,"Dziennik treningowy","Czy usunac trening?",QMessageBox::Yes | QMessageBox::No);
-    if(sprawdz == QMessageBox::Yes)
+
+    if(wpis)
     {
-    m_ksiazka.skasujKontener(wpis);
-    wpisMapa.remove(listItem);
-    delete listItem;
+        QMessageBox::StandardButton sprawdz;
+        sprawdz = QMessageBox::question(this,"Dziennik treningowy","Czy usunac trening?",QMessageBox::Yes | QMessageBox::No);
+        if(sprawdz == QMessageBox::Yes)
+        {
+        m_ksiazka.skasujKontener(wpis);
+        wpisMapa.remove(listItem);
+        delete listItem;
+        }
+    }
+    else
+    {
+        auto wpis2= wpisMapaCardio.value(listItem);
+        QMessageBox::StandardButton sprawdz;
+        sprawdz = QMessageBox::question(this,"Dziennik treningowy","Czy usunac trening?",QMessageBox::Yes | QMessageBox::No);
+        if(sprawdz == QMessageBox::Yes)
+        {
+        m_ksiazka.skasujKontenerCardio(wpis2);
+        wpisMapaCardio.remove(listItem);
+        delete listItem;
+        }
     }
 
 }
@@ -259,4 +283,6 @@ void MainWindow::wlaczPolaczenia()
     connect(ui->buttonBox->button(QDialogButtonBox::RestoreDefaults),&QPushButton::clicked,this,&MainWindow::PrzywrocDomyslne);
     connect(ui->buttonBox->button(QDialogButtonBox::Apply),&QPushButton::clicked,this,&MainWindow::WyswietlObjetosc);
 }
+
+
 

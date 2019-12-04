@@ -17,12 +17,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     kontener.cpp \
+    kontenercardio.cpp \
     ksiazkakontener.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     kontener.h \
+    kontenercardio.h \
     ksiazkakontener.h \
     mainwindow.h
 
