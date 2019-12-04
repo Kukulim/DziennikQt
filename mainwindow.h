@@ -34,8 +34,12 @@ private slots:
 
     void WyswietlObjetosc();
 
-
     void on_actionDodaj_trening_cardio_triggered();
+
+    void OkZapiszCardio();
+
+    void PrzywrocDomyslneCardio();
+
 
 private:
     Ui::MainWindow *ui;

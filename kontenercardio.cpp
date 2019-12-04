@@ -1,14 +1,13 @@
 #include "kontenercardio.h"
-#include <QDebug>
 
 KontenerCardio::KontenerCardio(QObject *parent) : QObject(parent)
 {
-    qDebug()<<"stworzony";
+
 }
 
 KontenerCardio::~KontenerCardio()
 {
-    qDebug()<<"usuniety";
+
 }
 
 QString KontenerCardio::getNazwaTreningu() const

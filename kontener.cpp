@@ -83,13 +83,4 @@ void Kontener::setCzyZaliczone(const bool &value, int miejsceWTablicy)
     czyZaliczone[miejsceWTablicy]=value;
 }
 
-int Kontener::getObjetoscCwiczenia(int miejsceWTablicy) const
-{
-    return objetoscCwiczenia[miejsceWTablicy];
-}
-
-void Kontener::setObjetoscCwiczenia(int miejsceWTablicy)
-{
-    objetoscCwiczenia[miejsceWTablicy]=(iloscSerii[miejsceWTablicy]+1)*(iloscPowtorzen[miejsceWTablicy]+1)*ciezar[miejsceWTablicy];
-}
 

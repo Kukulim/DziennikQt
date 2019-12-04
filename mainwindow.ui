@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>859</width>
-    <height>654</height>
+    <width>860</width>
+    <height>515</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,10 +15,10 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
+    <item row="0" column="1">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="page">
        <layout class="QGridLayout" name="gridLayout_2">
@@ -2046,7 +2046,11 @@
          </widget>
         </item>
         <item row="0" column="9">
-         <widget class="QDateEdit" name="dataEdit"/>
+         <widget class="QDateEdit" name="dataEdit">
+          <property name="calendarPopup">
+           <bool>true</bool>
+          </property>
+         </widget>
         </item>
         <item row="5" column="4">
          <widget class="QComboBox" name="iloscpowEdit_6">
@@ -2316,7 +2320,7 @@
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QComboBox" name="comboBox">
+         <widget class="QComboBox" name="rodzajCardioEdit">
           <property name="maximumSize">
            <size>
             <width>200</width>
@@ -2353,7 +2357,7 @@
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QLineEdit" name="lineEdit">
+         <widget class="QLineEdit" name="dystansCardioEdit">
           <property name="maximumSize">
            <size>
             <width>150</width>
@@ -2376,7 +2380,7 @@
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QTimeEdit" name="timeEdit">
+         <widget class="QTimeEdit" name="timeCardioEdit">
           <property name="maximumSize">
            <size>
             <width>75</width>
@@ -2385,15 +2389,15 @@
           </property>
          </widget>
         </item>
-        <item row="3" column="0">
+        <item row="4" column="0">
          <widget class="QLabel" name="label_8">
           <property name="text">
            <string>Data:</string>
           </property>
          </widget>
         </item>
-        <item row="3" column="1">
-         <widget class="QDateEdit" name="dateEdit">
+        <item row="4" column="1">
+         <widget class="QDateEdit" name="dataCardioEdit">
           <property name="maximumSize">
            <size>
             <width>100</width>
@@ -2405,10 +2409,22 @@
           </property>
          </widget>
         </item>
-        <item row="4" column="1">
-         <widget class="QDialogButtonBox" name="buttonBox_2">
+        <item row="5" column="0">
+         <widget class="QDialogButtonBox" name="buttonBoxCardio">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="contextMenuPolicy">
+           <enum>Qt::DefaultContextMenu</enum>
+          </property>
           <property name="layoutDirection">
-           <enum>Qt::RightToLeft</enum>
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
           </property>
           <property name="standardButtons">
            <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
@@ -2426,7 +2442,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>859</width>
+     <width>860</width>
      <height>20</height>
     </rect>
    </property>

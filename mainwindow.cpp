@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->buttonBox->button(QDialogButtonBox::Ok)->setText("Zapisz");
     ui->buttonBox->button(QDialogButtonBox::Apply)->setText("Oblicz objetosc");
     ui->buttonBox->button(QDialogButtonBox::RestoreDefaults)->setText("Przywroc domyslne");
+    ui->buttonBoxCardio->button(QDialogButtonBox::Ok)->setText("Zapisz");
 }
 
 MainWindow::~MainWindow()
@@ -37,6 +38,36 @@ void MainWindow::on_actionDodaj_trening_cardio_triggered()
     ui->listWidget->addItem(wpisekcardio->getNazwaTreningu());
     auto listItem = ui->listWidget->item(ui->listWidget->count()-1);
     wpisMapaCardio.insert(listItem, wpisekcardio);
+}
+
+void MainWindow::OkZapiszCardio()
+{
+    auto listItem = ui->listWidget->currentItem();
+    auto wpis = wpisMapaCardio.value(listItem);
+
+    listItem->setText((wpis->getDataTreninguCardio().toString())+" "+(wpis->getNazwaTreningu()));
+
+    wpis->setRodzajTreninguCardio(ui->rodzajCardioEdit->currentText());
+    wpis->setDystansTreninguCardio(ui->dystansCardioEdit->text().toDouble());
+    wpis->setCzasTreninguCardio(ui->timeCardioEdit->time());
+    wpis->setDataTreninguCardio(ui->dataCardioEdit->date());
+
+    listItem->setText((wpis->getDataTreninguCardio().toString())+" "+(wpis->getNazwaTreningu()));
+
+    AnulujZapisz();
+
+}
+
+void MainWindow::PrzywrocDomyslneCardio()
+{
+    auto listItem = ui->listWidget->currentItem();
+    auto wpis = wpisMapaCardio.value(listItem);
+
+    ui->rodzajCardioEdit->setCurrentText(wpis->getRodzajTreninguCardio());
+    ui->dataCardioEdit->setDate(wpis->getDataTreninguCardio());
+    ui->timeCardioEdit->setTime(wpis->getCzasTreninguCardio());
+    ui->dystansCardioEdit->setText(QString::number(wpis->getDystansTreninguCardio()));
+    ui->dataCardioEdit->setDate(wpis->getDataTreninguCardio());
 }
 
 void MainWindow::on_actionUsun_triggered()
@@ -74,13 +105,24 @@ void MainWindow::on_actionEdytuj_triggered()
 {
     if(ui->listWidget->currentItem())
     {
-    auto listItem = ui->listWidget->currentItem();
-    auto wpis = wpisMapa.value(listItem);
-    PrzywrocDomyslne();
-    ui->dataEdit->setDate(wpis->getDataCwiczenia());
-    ui->stackedWidget->setCurrentWidget(ui->page_2);
-    ui->menu->setEnabled(false);
-    WyswietlObjetosc();
+        auto listItem = ui->listWidget->currentItem();
+        auto wpis = wpisMapa.value(listItem);
+        if(wpis)
+        {
+            PrzywrocDomyslne();
+            ui->dataEdit->setDate(wpis->getDataCwiczenia());
+            ui->stackedWidget->setCurrentWidget(ui->page_2);
+            ui->menu->setEnabled(false);
+            WyswietlObjetosc();
+        }
+        else
+            {
+            auto wpis2= wpisMapaCardio.value(listItem);
+            ui->dataCardioEdit->setDate(wpis2->getDataTreninguCardio());
+            ui->stackedWidget->setCurrentWidget(ui->page_3);
+            ui->menu->setEnabled(false);
+            PrzywrocDomyslneCardio();
+            }
     }
 }
 
@@ -89,9 +131,8 @@ void MainWindow::Okzapisz()
 
     auto listItem = ui->listWidget->currentItem();
     auto wpis = wpisMapa.value(listItem);
+
     wpis->setDataCwiczenia(ui->dataEdit->date());
-    wpis->setIloscSerii(ui->iloscserEdit->currentText().toInt(),(ui->listWidget->count()-1));
-    listItem->setText((wpis->getDataCwiczenia().toString())+" "+(wpis->getNazwaTreningu()));
     wpis->setNazwaCwiczenia(ui->nazwacwEdit->text(),0);
     wpis->setNazwaCwiczenia(ui->nazwacwEdit_2->text(),1);
     wpis->setNazwaCwiczenia(ui->nazwacwEdit_3->text(),2);
@@ -115,7 +156,7 @@ void MainWindow::Okzapisz()
     wpis->setIloscSerii(ui->iloscserEdit_10->currentIndex(),8);
     wpis->setIloscSerii(ui->iloscserEdit_11->currentIndex(),9);
     wpis->setIloscSerii(ui->iloscserEdit_12->currentIndex(),10);
-    wpis->setIloscSerii(ui->iloscserEdit_13->currentIndex(),10);
+    wpis->setIloscSerii(ui->iloscserEdit_13->currentIndex(),11);
     wpis->setIloscPowtorzen(ui->iloscpowEdit->currentIndex(),0);
     wpis->setIloscPowtorzen(ui->iloscpowEdit_3->currentIndex(),1);
     wpis->setIloscPowtorzen(ui->iloscpowEdit_4->currentIndex(),2);
@@ -152,6 +193,8 @@ void MainWindow::Okzapisz()
     wpis->setCzyZaliczone(ui->czyzaliczonecw_10->checkState(),9);
     wpis->setCzyZaliczone(ui->czyzaliczonecw_11->checkState(),10);
     wpis->setCzyZaliczone(ui->czyzaliczonecw_12->checkState(),11);
+
+    listItem->setText((wpis->getDataCwiczenia().toString())+" "+(wpis->getNazwaTreningu()));
 
     AnulujZapisz();
 }
@@ -215,19 +258,6 @@ void MainWindow::PrzywrocDomyslne()
     ui->ciezarEdit_11->setText(QString::number(wpis->getCiezar(9)));
     ui->ciezarEdit_12->setText(QString::number(wpis->getCiezar(10)));
     ui->ciezarEdit_13->setText(QString::number(wpis->getCiezar(11)));
-    ui->objetoscEdit->setText(QString::number(wpis->getObjetoscCwiczenia(0)));
-    ui->objetoscEdit_2->setText(QString::number(wpis->getObjetoscCwiczenia(1)));
-    ui->objetoscEdit_3->setText(QString::number(wpis->getObjetoscCwiczenia(2)));
-    ui->objetoscEdit_4->setText(QString::number(wpis->getObjetoscCwiczenia(3)));
-    ui->objetoscEdit_5->setText(QString::number(wpis->getObjetoscCwiczenia(4)));
-    ui->objetoscEdit_6->setText(QString::number(wpis->getObjetoscCwiczenia(5)));
-    ui->objetoscEdit_7->setText(QString::number(wpis->getObjetoscCwiczenia(6)));
-    ui->objetoscEdit_8->setText(QString::number(wpis->getObjetoscCwiczenia(7)));
-    ui->objetoscEdit_9->setText(QString::number(wpis->getObjetoscCwiczenia(8)));
-    ui->objetoscEdit_10->setText(QString::number(wpis->getObjetoscCwiczenia(9)));
-    ui->objetoscEdit_11->setText(QString::number(wpis->getObjetoscCwiczenia(10)));
-    ui->objetoscEdit_12->setText(QString::number(wpis->getObjetoscCwiczenia(11)));
-    //ui->objetosccalaEdit->setText(QString::number(wpis->getObjetoscTreningu()));
     ui->czyzaliczonecw->setChecked(wpis->getCzyZaliczone(0));
     ui->czyzaliczonecw_2->setChecked(wpis->getCzyZaliczone(1));
     ui->czyzaliczonecw_3->setChecked(wpis->getCzyZaliczone(2));
@@ -241,23 +271,25 @@ void MainWindow::PrzywrocDomyslne()
     ui->czyzaliczonecw_11->setChecked(wpis->getCzyZaliczone(10));
     ui->czyzaliczonecw_12->setChecked(wpis->getCzyZaliczone(11));
 
+    WyswietlObjetosc();
+
 }
 
 void MainWindow::WyswietlObjetosc()
 {
 
-    ui->objetoscEdit->setText(QString::number((ui->iloscserEdit->currentIndex()+1)*(ui->iloscserEdit->currentIndex()+1)*ui->ciezarEdit->text().toInt()));
-    ui->objetoscEdit_2->setText(QString::number((ui->iloscserEdit_3->currentIndex()+1)*(ui->iloscserEdit_3->currentIndex()+1)*ui->ciezarEdit_3->text().toInt()));
-    ui->objetoscEdit_3->setText(QString::number((ui->iloscserEdit_4->currentIndex()+1)*(ui->iloscserEdit_4->currentIndex()+1)*ui->ciezarEdit_4->text().toInt()));
-    ui->objetoscEdit_4->setText(QString::number((ui->iloscserEdit_5->currentIndex()+1)*(ui->iloscserEdit_5->currentIndex()+1)*ui->ciezarEdit_5->text().toInt()));
-    ui->objetoscEdit_5->setText(QString::number((ui->iloscserEdit_6->currentIndex()+1)*(ui->iloscserEdit_6->currentIndex()+1)*ui->ciezarEdit_6->text().toInt()));
-    ui->objetoscEdit_6->setText(QString::number((ui->iloscserEdit_7->currentIndex()+1)*(ui->iloscserEdit_7->currentIndex()+1)*ui->ciezarEdit_7->text().toInt()));
-    ui->objetoscEdit_7->setText(QString::number((ui->iloscserEdit_8->currentIndex()+1)*(ui->iloscserEdit_8->currentIndex()+1)*ui->ciezarEdit_8->text().toInt()));
-    ui->objetoscEdit_8->setText(QString::number((ui->iloscserEdit_9->currentIndex()+1)*(ui->iloscserEdit_9->currentIndex()+1)*ui->ciezarEdit_9->text().toInt()));
-    ui->objetoscEdit_9->setText(QString::number((ui->iloscserEdit_10->currentIndex()+1)*(ui->iloscserEdit_10->currentIndex()+1)*ui->ciezarEdit_10->text().toInt()));
-    ui->objetoscEdit_10->setText(QString::number((ui->iloscserEdit_11->currentIndex()+1)*(ui->iloscserEdit_11->currentIndex()+1)*ui->ciezarEdit_11->text().toInt()));
-    ui->objetoscEdit_11->setText(QString::number((ui->iloscserEdit_12->currentIndex()+1)*(ui->iloscserEdit_12->currentIndex()+1)*ui->ciezarEdit_12->text().toInt()));
-    ui->objetoscEdit_12->setText(QString::number((ui->iloscserEdit_13->currentIndex()+1)*(ui->iloscserEdit_13->currentIndex()+1)*ui->ciezarEdit_13->text().toInt()));
+    ui->objetoscEdit->setText(QString::number((ui->iloscserEdit->currentIndex()+1)*(ui->iloscpowEdit->currentIndex()+1)*ui->ciezarEdit->text().toInt()));
+    ui->objetoscEdit_2->setText(QString::number((ui->iloscserEdit_3->currentIndex()+1)*(ui->iloscpowEdit_3->currentIndex()+1)*ui->ciezarEdit_3->text().toInt()));
+    ui->objetoscEdit_3->setText(QString::number((ui->iloscserEdit_4->currentIndex()+1)*(ui->iloscpowEdit_4->currentIndex()+1)*ui->ciezarEdit_4->text().toInt()));
+    ui->objetoscEdit_4->setText(QString::number((ui->iloscserEdit_5->currentIndex()+1)*(ui->iloscpowEdit_5->currentIndex()+1)*ui->ciezarEdit_5->text().toInt()));
+    ui->objetoscEdit_5->setText(QString::number((ui->iloscserEdit_6->currentIndex()+1)*(ui->iloscpowEdit_6->currentIndex()+1)*ui->ciezarEdit_6->text().toInt()));
+    ui->objetoscEdit_6->setText(QString::number((ui->iloscserEdit_7->currentIndex()+1)*(ui->iloscpowEdit_7->currentIndex()+1)*ui->ciezarEdit_7->text().toInt()));
+    ui->objetoscEdit_7->setText(QString::number((ui->iloscserEdit_8->currentIndex()+1)*(ui->iloscpowEdit_8->currentIndex()+1)*ui->ciezarEdit_8->text().toInt()));
+    ui->objetoscEdit_8->setText(QString::number((ui->iloscserEdit_9->currentIndex()+1)*(ui->iloscpowEdit_9->currentIndex()+1)*ui->ciezarEdit_9->text().toInt()));
+    ui->objetoscEdit_9->setText(QString::number((ui->iloscserEdit_10->currentIndex()+1)*(ui->iloscpowEdit_10->currentIndex()+1)*ui->ciezarEdit_10->text().toInt()));
+    ui->objetoscEdit_10->setText(QString::number((ui->iloscserEdit_11->currentIndex()+1)*(ui->iloscpowEdit_11->currentIndex()+1)*ui->ciezarEdit_11->text().toInt()));
+    ui->objetoscEdit_11->setText(QString::number((ui->iloscserEdit_12->currentIndex()+1)*(ui->iloscpowEdit_12->currentIndex()+1)*ui->ciezarEdit_12->text().toInt()));
+    ui->objetoscEdit_12->setText(QString::number((ui->iloscserEdit_13->currentIndex()+1)*(ui->iloscpowEdit_13->currentIndex()+1)*ui->ciezarEdit_13->text().toInt()));
 
     int suma=0;
     suma=(ui->objetoscEdit->text().toInt()+
@@ -282,6 +314,8 @@ void MainWindow::wlaczPolaczenia()
     connect(ui->buttonBox->button(QDialogButtonBox::Ok),&QPushButton::clicked,this,&MainWindow::Okzapisz);
     connect(ui->buttonBox->button(QDialogButtonBox::RestoreDefaults),&QPushButton::clicked,this,&MainWindow::PrzywrocDomyslne);
     connect(ui->buttonBox->button(QDialogButtonBox::Apply),&QPushButton::clicked,this,&MainWindow::WyswietlObjetosc);
+    connect(ui->buttonBoxCardio->button(QDialogButtonBox::Cancel),&QPushButton::clicked,this,&MainWindow::AnulujZapisz);
+    connect(ui->buttonBoxCardio->button(QDialogButtonBox::Ok),&QPushButton::clicked,this,&MainWindow::OkZapiszCardio);
 }
 
 
