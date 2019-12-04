@@ -35,7 +35,7 @@ private:
     QString rodzajTreninguCardio;
     QDate dataTreninguCardio;
     QTime czasTreninguCardio;
-    double dystansTreninguCardio;
+    double dystansTreninguCardio=0;
 };
 
 #endif // KONTENERCARDIO_H
