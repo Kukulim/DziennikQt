@@ -56,6 +56,7 @@ void MainWindow::on_actionEdytuj_triggered()
     ui->dataEdit->setDate(wpis->getDataCwiczenia());
     ui->stackedWidget->setCurrentWidget(ui->page_2);
     ui->menu->setEnabled(false);
+    WyswietlObjetosc();
     }
 }
 
@@ -202,7 +203,7 @@ void MainWindow::PrzywrocDomyslne()
     ui->objetoscEdit_10->setText(QString::number(wpis->getObjetoscCwiczenia(9)));
     ui->objetoscEdit_11->setText(QString::number(wpis->getObjetoscCwiczenia(10)));
     ui->objetoscEdit_12->setText(QString::number(wpis->getObjetoscCwiczenia(11)));
-    ui->objetosccalaEdit->setText(QString::number(wpis->getObjetoscTreningu()));
+    //ui->objetosccalaEdit->setText(QString::number(wpis->getObjetoscTreningu()));
     ui->czyzaliczonecw->setChecked(wpis->getCzyZaliczone(0));
     ui->czyzaliczonecw_2->setChecked(wpis->getCzyZaliczone(1));
     ui->czyzaliczonecw_3->setChecked(wpis->getCzyZaliczone(2));

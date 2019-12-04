@@ -1,14 +1,13 @@
 #include "kontener.h"
-#include <QDebug>
 
 Kontener::Kontener(QObject *parent) : QObject(parent)
 {
-    qDebug()<<"stworzony";
+
 }
 
 Kontener::~Kontener()
 {
-    qDebug()<<"usuniety";
+
 }
 
 QString Kontener::getNazwaTreningu() const
@@ -69,24 +68,6 @@ int Kontener::getCiezar(int miejsceWTablicy) const
 void Kontener::setCiezar(const int &value, const int miejsceWTablicy)
 {
     ciezar[miejsceWTablicy]=value;
-}
-
-int Kontener::getObjetoscTreningu() const
-{
-    return objetoscTreningu;
-}
-
-void Kontener::setObjetoscTreningu()
-{
-    for (int i = 0; i<12 ;i++)
-    {
-        objetoscTreningu+=objetoscCwiczenia[i];
-    }
-}
-
-void Kontener::resetObjetoscTreningu()
-{
-    objetoscTreningu=0;
 }
 
 bool Kontener::getCzyZaliczone(int miejsceWTablicy) const
