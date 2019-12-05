@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QHash>
+#include <QMessageBox>
 
 #include "ksiazkakontener.h"
 
@@ -46,6 +47,8 @@ private:
     KsiazkaKontener m_ksiazka;
     QHash<QListWidgetItem*,Kontener*> wpisMapa;
     QHash<QListWidgetItem*,KontenerCardio*> wpisMapaCardio;
+    QMessageBox *mojbox= new QMessageBox(this);
+
 
     void wlaczPolaczenia();
 

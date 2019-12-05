@@ -15,6 +15,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->buttonBox->button(QDialogButtonBox::Apply)->setText("Oblicz objetosc");
     ui->buttonBox->button(QDialogButtonBox::RestoreDefaults)->setText("Przywroc domyslne");
     ui->buttonBoxCardio->button(QDialogButtonBox::Ok)->setText("Zapisz");
+    setCentralWidget(ui->stackedWidget);
+
+    //niedziala mesaggebox stylesheet
 }
 
 MainWindow::~MainWindow()
@@ -77,8 +80,9 @@ void MainWindow::on_actionUsun_triggered()
 
     if(wpis)
     {
+
         QMessageBox::StandardButton sprawdz;
-        sprawdz = QMessageBox::question(this,"Dziennik treningowy","Czy usunac trening?",QMessageBox::Yes | QMessageBox::No);
+        sprawdz = mojbox->question(this,"Dziennik treningowy","Czy usunac trening?",QMessageBox::Yes | QMessageBox::No);
         if(sprawdz == QMessageBox::Yes)
         {
         m_ksiazka.skasujKontener(wpis);
@@ -90,7 +94,8 @@ void MainWindow::on_actionUsun_triggered()
     {
         auto wpis2= wpisMapaCardio.value(listItem);
         QMessageBox::StandardButton sprawdz;
-        sprawdz = QMessageBox::question(this,"Dziennik treningowy","Czy usunac trening?",QMessageBox::Yes | QMessageBox::No);
+        sprawdz = mojbox->question(this,"Dziennik treningowy","Czy usunac trening?",QMessageBox::Yes | QMessageBox::No);
+        QMessageBox msgBox;
         if(sprawdz == QMessageBox::Yes)
         {
         m_ksiazka.skasujKontenerCardio(wpis2);

@@ -13,14 +13,29 @@
   <property name="windowTitle">
    <string>Dziennik Treningowy v. 0.1</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">font: 75 italic 10pt &quot;Arimo&quot;;
+color: white;
+background-color:rgb(47, 47, 47)
+</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="1">
      <widget class="QStackedWidget" name="stackedWidget">
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(47, 47, 47)</string>
+      </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
       <widget class="QWidget" name="page">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
        <layout class="QGridLayout" name="gridLayout_2">
         <item row="0" column="0">
          <widget class="QLabel" name="label_11">
@@ -30,7 +45,11 @@
          </widget>
         </item>
         <item row="3" column="1">
-         <widget class="QGraphicsView" name="graphicsView"/>
+         <widget class="QGraphicsView" name="graphicsView">
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid  rgb(61, 30, 0);</string>
+          </property>
+         </widget>
         </item>
         <item row="0" column="1">
          <widget class="QLabel" name="label_12">
@@ -40,13 +59,36 @@
          </widget>
         </item>
         <item row="1" column="0" rowspan="3">
-         <widget class="QListWidget" name="listWidget"/>
+         <widget class="QListWidget" name="listWidget">
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid  rgb(61, 30, 0);</string>
+          </property>
+         </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QCalendarWidget" name="calendarWidget"/>
+         <widget class="QCalendarWidget" name="calendarWidget">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(65, 65, 65);
+border: 1px solid  rgb(61, 30, 0);
+alternate-background-color: rgb(42, 42, 42);
+</string>
+          </property>
+          <property name="gridVisible">
+           <bool>true</bool>
+          </property>
+          <property name="selectionMode">
+           <enum>QCalendarWidget::SingleSelection</enum>
+          </property>
+          <property name="dateEditEnabled">
+           <bool>true</bool>
+          </property>
+         </widget>
         </item>
         <item row="2" column="1">
          <widget class="QLabel" name="label_13">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
           <property name="text">
            <string>Statystyki:</string>
           </property>
@@ -79,6 +121,9 @@
             <width>40</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
           </property>
           <item>
            <property name="text">
@@ -133,6 +178,10 @@
           <property name="layoutDirection">
            <enum>Qt::LeftToRight</enum>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
           <property name="text">
            <string/>
           </property>
@@ -152,6 +201,13 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
          </widget>
         </item>
         <item row="11" column="4">
@@ -161,6 +217,9 @@
             <width>40</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
           </property>
           <item>
            <property name="text">
@@ -252,6 +311,9 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
+          </property>
           <item>
            <property name="text">
             <string>1</string>
@@ -342,6 +404,9 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
+          </property>
           <item>
            <property name="text">
             <string>1</string>
@@ -392,6 +457,9 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
+          </property>
           <item>
            <property name="text">
             <string>1</string>
@@ -435,7 +503,12 @@
          </widget>
         </item>
         <item row="1" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit"/>
+         <widget class="QLineEdit" name="nazwacwEdit">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+         </widget>
         </item>
         <item row="0" column="0">
          <widget class="QLabel" name="label">
@@ -455,6 +528,13 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
          </widget>
         </item>
         <item row="2" column="4">
@@ -464,6 +544,9 @@
             <width>40</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
           </property>
           <item>
            <property name="text">
@@ -558,6 +641,13 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
          </widget>
         </item>
         <item row="9" column="2">
@@ -567,6 +657,9 @@
             <width>40</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
           </property>
           <item>
            <property name="text">
@@ -617,6 +710,9 @@
             <width>40</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
           </property>
           <item>
            <property name="text">
@@ -708,6 +804,9 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
+          </property>
           <item>
            <property name="text">
             <string>1</string>
@@ -758,6 +857,10 @@
             <height>50</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
@@ -777,6 +880,9 @@
             <width>40</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
           </property>
           <item>
            <property name="text">
@@ -827,6 +933,9 @@
             <width>40</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
           </property>
           <item>
            <property name="text">
@@ -925,6 +1034,10 @@
             <height>50</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
@@ -945,7 +1058,12 @@
          </widget>
         </item>
         <item row="9" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit_9"/>
+         <widget class="QLineEdit" name="nazwacwEdit_9">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+         </widget>
         </item>
         <item row="5" column="8">
          <spacer name="horizontalSpacer_5">
@@ -994,6 +1112,10 @@
             <height>50</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
@@ -1006,6 +1128,10 @@
             <width>50</width>
             <height>50</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -1023,6 +1149,13 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
          </widget>
         </item>
         <item row="9" column="5">
@@ -1032,6 +1165,10 @@
             <width>50</width>
             <height>50</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -1049,10 +1186,22 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
          </widget>
         </item>
         <item row="6" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit_6"/>
+         <widget class="QLineEdit" name="nazwacwEdit_6">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+         </widget>
         </item>
         <item row="12" column="5">
          <widget class="QLineEdit" name="ciezarEdit_13">
@@ -1061,6 +1210,10 @@
             <width>50</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -1077,6 +1230,13 @@
             <width>50</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
@@ -1095,6 +1255,10 @@
             <height>50</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
@@ -1107,6 +1271,10 @@
             <width>50</width>
             <height>50</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -1145,6 +1313,14 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;
+color:rgb(61, 30, 0);</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
          </widget>
         </item>
         <item row="11" column="2">
@@ -1154,6 +1330,9 @@
             <width>40</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
           </property>
           <item>
            <property name="text">
@@ -1208,12 +1387,12 @@
             <height>16777215</height>
            </size>
           </property>
-         </widget>
-        </item>
-        <item row="13" column="4" colspan="2">
-         <widget class="QLabel" name="label_10">
-          <property name="text">
-           <string>Laczna objetosc treningu:</string>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
@@ -1224,6 +1403,10 @@
             <width>50</width>
             <height>50</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -1237,6 +1420,9 @@
             <width>40</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
           </property>
           <item>
            <property name="text">
@@ -1288,6 +1474,10 @@
             <height>50</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
@@ -1295,13 +1485,21 @@
         </item>
         <item row="2" column="9">
          <widget class="QCheckBox" name="czyzaliczonecw_2">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
           <property name="text">
            <string>Zaliczone</string>
           </property>
          </widget>
         </item>
         <item row="7" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit_7"/>
+         <widget class="QLineEdit" name="nazwacwEdit_7">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+         </widget>
         </item>
         <item row="3" column="9">
          <widget class="QCheckBox" name="czyzaliczonecw_3">
@@ -1317,6 +1515,9 @@
             <width>40</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
           </property>
           <item>
            <property name="text">
@@ -1411,6 +1612,13 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
          </widget>
         </item>
         <item row="1" column="9">
@@ -1427,6 +1635,9 @@
             <width>40</width>
             <height>500</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0);</string>
           </property>
           <item>
            <property name="text">
@@ -1518,6 +1729,9 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
+          </property>
           <item>
            <property name="text">
             <string>1</string>
@@ -1608,13 +1822,22 @@
             <height>50</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
         <item row="8" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit_8"/>
+         <widget class="QLineEdit" name="nazwacwEdit_8">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+         </widget>
         </item>
         <item row="6" column="2">
          <widget class="QComboBox" name="iloscserEdit_7">
@@ -1623,6 +1846,9 @@
             <width>40</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
           </property>
           <item>
            <property name="text">
@@ -1667,16 +1893,36 @@
          </widget>
         </item>
         <item row="2" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit_2"/>
+         <widget class="QLineEdit" name="nazwacwEdit_2">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+         </widget>
         </item>
         <item row="12" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit_12"/>
+         <widget class="QLineEdit" name="nazwacwEdit_12">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+         </widget>
         </item>
         <item row="4" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit_4"/>
+         <widget class="QLineEdit" name="nazwacwEdit_4">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+         </widget>
         </item>
         <item row="11" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit_11"/>
+         <widget class="QLineEdit" name="nazwacwEdit_11">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+         </widget>
         </item>
         <item row="10" column="2">
          <widget class="QComboBox" name="iloscserEdit_11">
@@ -1685,6 +1931,9 @@
             <width>40</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
           </property>
           <item>
            <property name="text">
@@ -1735,6 +1984,9 @@
             <width>40</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
           </property>
           <item>
            <property name="text">
@@ -1829,6 +2081,13 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
          </widget>
         </item>
         <item row="4" column="7">
@@ -1842,13 +2101,30 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
          </widget>
         </item>
         <item row="5" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit_5"/>
+         <widget class="QLineEdit" name="nazwacwEdit_5">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+         </widget>
         </item>
         <item row="10" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit_10"/>
+         <widget class="QLineEdit" name="nazwacwEdit_10">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+         </widget>
         </item>
         <item row="9" column="9">
          <widget class="QCheckBox" name="czyzaliczonecw_9">
@@ -1867,6 +2143,13 @@
             <width>50</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
@@ -1910,7 +2193,12 @@
          </spacer>
         </item>
         <item row="3" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit_3"/>
+         <widget class="QLineEdit" name="nazwacwEdit_3">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+         </widget>
         </item>
         <item row="11" column="9">
          <widget class="QCheckBox" name="czyzaliczonecw_11">
@@ -1926,6 +2214,9 @@
             <width>40</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
           </property>
           <item>
            <property name="text">
@@ -2020,6 +2311,13 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
          </widget>
         </item>
         <item row="2" column="2">
@@ -2029,6 +2327,9 @@
             <width>40</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
           </property>
           <item>
            <property name="text">
@@ -2086,6 +2387,9 @@
             <width>40</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
           </property>
           <item>
            <property name="text">
@@ -2177,6 +2481,10 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0);
+</string>
+          </property>
           <item>
            <property name="text">
             <string>1</string>
@@ -2233,6 +2541,9 @@
             <width>40</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
           </property>
           <item>
            <property name="text">
@@ -2332,6 +2643,22 @@
           </property>
           <property name="standardButtons">
            <set>QDialogButtonBox::Apply|QDialogButtonBox::Cancel|QDialogButtonBox::Ok|QDialogButtonBox::RestoreDefaults</set>
+          </property>
+         </widget>
+        </item>
+        <item row="13" column="4" colspan="3">
+         <widget class="QLabel" name="label_10">
+          <property name="font">
+           <font>
+            <family>Arimo</family>
+            <pointsize>10</pointsize>
+            <weight>9</weight>
+            <italic>true</italic>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Laczna objetosc treningu:</string>
           </property>
          </widget>
         </item>
@@ -2470,10 +2797,17 @@
      <x>0</x>
      <y>0</y>
      <width>860</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(47, 47, 47);
+color: white;</string>
+   </property>
    <widget class="QMenu" name="menu">
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="title">
      <string>Menu</string>
     </property>
@@ -2484,7 +2818,6 @@
    </widget>
    <addaction name="menu"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="actionDodaj">
    <property name="text">
     <string>Dodaj trening silowy</string>
