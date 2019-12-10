@@ -83,4 +83,14 @@ void Kontener::setCzyZaliczone(const bool &value, int miejsceWTablicy)
     czyZaliczone[miejsceWTablicy]=value;
 }
 
+int Kontener::getObjetoscTreningu() const
+{
+    return objetoscTreningu;
+}
+
+void Kontener::setObjetoscTreningu(int value)
+{
+    objetoscTreningu = value;
+}
+
 

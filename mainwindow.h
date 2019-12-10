@@ -41,6 +41,9 @@ private slots:
 
     void PrzywrocDomyslneCardio();
 
+    void WczytajPoprzedniTrening();
+
+
 
 private:
     Ui::MainWindow *ui;
