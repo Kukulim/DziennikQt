@@ -60,9 +60,16 @@ void MainWindow::OkZapiszCardio()
     listItem->setText((wpis->getDataTreninguCardio().toString())+" "+(wpis->getNazwaTreningu()));
     listItem->setForeground(Qt::yellow);
 
-    ui->calendarWidget->setSelectedDate(wpis->getDataTreninguCardio());
+    QTextFormat obecnyKolor = ui->calendarWidget->dateTextFormat(wpis->getDataTreninguCardio());
     QTextCharFormat zaznaczonyKolor;
-    zaznaczonyKolor.setBackground(Qt::yellow);
+    if(obecnyKolor.background()==Qt::green||obecnyKolor.background()==Qt::darkCyan)
+    {
+        zaznaczonyKolor.setBackground(Qt::darkCyan);
+    }
+    else
+    {
+        zaznaczonyKolor.setBackground(Qt::yellow);
+    }
     zaznaczonyKolor.setForeground(Qt::black);
     ui->calendarWidget->setDateTextFormat(ui->calendarWidget->selectedDate(),zaznaczonyKolor);
     AnulujZapisz();
@@ -309,8 +316,18 @@ void MainWindow::Okzapisz()
     listItem->setForeground(Qt::green);
 
     ui->calendarWidget->setSelectedDate(wpis->getDataCwiczenia());
+
+    QTextFormat obecnyKolor = ui->calendarWidget->dateTextFormat(wpis->getDataCwiczenia());
     QTextCharFormat zaznaczonyKolor;
-    zaznaczonyKolor.setBackground(Qt::green);
+    if(obecnyKolor.background()==Qt::yellow||obecnyKolor.background()==Qt::darkCyan)
+    {
+        zaznaczonyKolor.setBackground(Qt::darkCyan);
+    }
+    else
+    {
+        zaznaczonyKolor.setBackground(Qt::green);
+    }
+
     zaznaczonyKolor.setForeground(Qt::black);
     ui->calendarWidget->setDateTextFormat(ui->calendarWidget->selectedDate(),zaznaczonyKolor);
     AnulujZapisz();
@@ -435,9 +452,6 @@ void MainWindow::wlaczPolaczenia()
     connect(ui->buttonBoxCardio->button(QDialogButtonBox::Cancel),&QPushButton::clicked,this,&MainWindow::AnulujZapisz);
     connect(ui->buttonBoxCardio->button(QDialogButtonBox::Ok),&QPushButton::clicked,this,&MainWindow::OkZapiszCardio);
 }
-
-
-
 
 void MainWindow::on_listWidget_itemDoubleClicked()
 {
