@@ -178,6 +178,13 @@ void MainWindow::on_actionUsun_triggered()
         m_ksiazka.skasujKontener(wpis);
         wpisMapa.remove(listItem);
         delete listItem;
+
+        ui->calendarWidget->setSelectedDate(wpis->getDataCwiczenia());
+        QTextCharFormat zaznaczonyKolor;
+        zaznaczonyKolor.setBackground(QColor(65, 65, 65));
+        zaznaczonyKolor.setForeground(Qt::white);
+        ui->calendarWidget->setDateTextFormat(ui->calendarWidget->selectedDate(),zaznaczonyKolor);
+        AnulujZapisz();
         }
     }
     else
@@ -191,6 +198,14 @@ void MainWindow::on_actionUsun_triggered()
         m_ksiazka.skasujKontenerCardio(wpis2);
         wpisMapaCardio.remove(listItem);
         delete listItem;
+
+        ui->calendarWidget->setSelectedDate(wpis2->getDataTreninguCardio());
+        QTextCharFormat zaznaczonyKolor;
+        zaznaczonyKolor.setBackground(QColor(65, 65, 65));
+        zaznaczonyKolor.setForeground(Qt::white);
+        ui->calendarWidget->setDateTextFormat(ui->calendarWidget->selectedDate(),zaznaczonyKolor);
+        AnulujZapisz();
+
         }
     }
 
@@ -423,3 +438,8 @@ void MainWindow::wlaczPolaczenia()
 
 
 
+
+void MainWindow::on_listWidget_itemDoubleClicked()
+{
+    on_actionEdytuj_triggered();
+}

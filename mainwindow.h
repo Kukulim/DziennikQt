@@ -45,6 +45,8 @@ private slots:
 
 
 
+    void on_listWidget_itemDoubleClicked();
+
 private:
     Ui::MainWindow *ui;
     KsiazkaKontener m_ksiazka;
