@@ -60,6 +60,8 @@ void MainWindow::OkZapiszCardio()
     listItem->setText((wpis->getDataTreninguCardio().toString())+" "+(wpis->getNazwaTreningu()));
     listItem->setForeground(Qt::yellow);
 
+    ui->calendarWidget->setSelectedDate(wpis->getDataTreninguCardio());
+
     QTextFormat obecnyKolor = ui->calendarWidget->dateTextFormat(wpis->getDataTreninguCardio());
     QTextCharFormat zaznaczonyKolor;
     if(obecnyKolor.background()==Qt::green||obecnyKolor.background()==Qt::darkCyan)
@@ -182,16 +184,27 @@ void MainWindow::on_actionUsun_triggered()
         sprawdz = mojbox->question(this,"Dziennik treningowy","Czy usunac trening?",QMessageBox::Yes | QMessageBox::No);
         if(sprawdz == QMessageBox::Yes)
         {
-        m_ksiazka.skasujKontener(wpis);
-        wpisMapa.remove(listItem);
-        delete listItem;
 
-        ui->calendarWidget->setSelectedDate(wpis->getDataCwiczenia());
-        QTextCharFormat zaznaczonyKolor;
-        zaznaczonyKolor.setBackground(QColor(65, 65, 65));
-        zaznaczonyKolor.setForeground(Qt::white);
-        ui->calendarWidget->setDateTextFormat(ui->calendarWidget->selectedDate(),zaznaczonyKolor);
-        AnulujZapisz();
+            ui->calendarWidget->setSelectedDate(wpis->getDataCwiczenia());
+            QTextFormat obecnyKolor = ui->calendarWidget->dateTextFormat(wpis->getDataCwiczenia());
+            QTextCharFormat zaznaczonyKolor;
+            if(obecnyKolor.background()==Qt::darkCyan)
+            {
+                zaznaczonyKolor.setBackground(Qt::yellow);
+                zaznaczonyKolor.setForeground(Qt::black);
+            }
+            else
+            {
+                zaznaczonyKolor.setBackground(QColor(65, 65, 65));
+                zaznaczonyKolor.setForeground(Qt::white);
+            }
+            ui->calendarWidget->setDateTextFormat(ui->calendarWidget->selectedDate(),zaznaczonyKolor);
+
+            m_ksiazka.skasujKontener(wpis);
+            wpisMapa.remove(listItem);
+            delete listItem;
+
+            AnulujZapisz();
         }
     }
     else
@@ -202,16 +215,27 @@ void MainWindow::on_actionUsun_triggered()
         QMessageBox msgBox;
         if(sprawdz == QMessageBox::Yes)
         {
-        m_ksiazka.skasujKontenerCardio(wpis2);
-        wpisMapaCardio.remove(listItem);
-        delete listItem;
 
-        ui->calendarWidget->setSelectedDate(wpis2->getDataTreninguCardio());
-        QTextCharFormat zaznaczonyKolor;
-        zaznaczonyKolor.setBackground(QColor(65, 65, 65));
-        zaznaczonyKolor.setForeground(Qt::white);
-        ui->calendarWidget->setDateTextFormat(ui->calendarWidget->selectedDate(),zaznaczonyKolor);
-        AnulujZapisz();
+            ui->calendarWidget->setSelectedDate(wpis2->getDataTreninguCardio());
+            QTextFormat obecnyKolor = ui->calendarWidget->dateTextFormat(wpis2->getDataTreninguCardio());
+            QTextCharFormat zaznaczonyKolor;
+            if(obecnyKolor.background()==Qt::darkCyan)
+            {
+                zaznaczonyKolor.setBackground(Qt::green);
+            }
+            else
+            {
+                zaznaczonyKolor.setBackground(QColor(65, 65, 65));
+            }
+
+            zaznaczonyKolor.setForeground(Qt::white);
+            ui->calendarWidget->setDateTextFormat(ui->calendarWidget->selectedDate(),zaznaczonyKolor);
+
+            m_ksiazka.skasujKontenerCardio(wpis2);
+            wpisMapaCardio.remove(listItem);
+            delete listItem;
+
+            AnulujZapisz();
 
         }
     }
