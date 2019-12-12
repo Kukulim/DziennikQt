@@ -6,44 +6,415 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>859</width>
-    <height>654</height>
+    <width>939</width>
+    <height>515</height>
    </rect>
   </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::NoContextMenu</enum>
+  </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Dziennik Treningowy v. 0.1</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">font: 75 italic 10pt &quot;Arimo&quot;;
+color: white;
+background-color:rgb(47, 47, 47)
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
+    <item row="0" column="1">
      <widget class="QStackedWidget" name="stackedWidget">
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(47, 47, 47)</string>
+      </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
       <widget class="QWidget" name="page">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
        <layout class="QGridLayout" name="gridLayout_2">
         <item row="0" column="0">
-         <widget class="QListWidget" name="listWidget"/>
+         <widget class="QLabel" name="label_11">
+          <property name="text">
+           <string>Treningi:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QGraphicsView" name="graphicsView">
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid  rgb(61, 30, 0);</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="label_12">
+          <property name="text">
+           <string>Kaledarz:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" rowspan="3">
+         <widget class="QListWidget" name="listWidget">
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid  rgb(61, 30, 0);</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QCalendarWidget" name="calendarWidget">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(65, 65, 65);
+border: 1px solid  rgb(61, 30, 0);
+alternate-background-color: rgb(42, 42, 42);
+selection-background-color:transparent;
+</string>
+          </property>
+          <property name="gridVisible">
+           <bool>true</bool>
+          </property>
+          <property name="selectionMode">
+           <enum>QCalendarWidget::SingleSelection</enum>
+          </property>
+          <property name="dateEditEnabled">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="label_13">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string>Statystyki:</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
       <widget class="QWidget" name="page_2">
        <layout class="QGridLayout" name="gridLayout_4">
-        <item row="5" column="10">
-         <spacer name="horizontalSpacer_4">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
+        <item row="12" column="9">
+         <widget class="QCheckBox" name="czyzaliczonecw_12">
+          <property name="text">
+           <string>Zaliczone</string>
           </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Minimum</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
+         </widget>
+        </item>
+        <item row="2" column="5">
+         <widget class="QLineEdit" name="ciezarEdit_3">
+          <property name="maximumSize">
            <size>
-            <width>40</width>
-            <height>20</height>
+            <width>50</width>
+            <height>50</height>
            </size>
           </property>
-         </spacer>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="2">
+         <widget class="QComboBox" name="iloscserEdit_7">
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="4" column="4">
+         <widget class="QComboBox" name="iloscpowEdit_5">
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>9</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>10</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>11</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>12</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>13</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>14</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>15</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>16</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="6" column="9">
+         <widget class="QCheckBox" name="czyzaliczonecw_6">
+          <property name="text">
+           <string>Zaliczone</string>
+          </property>
+         </widget>
+        </item>
+        <item row="13" column="7">
+         <widget class="QLineEdit" name="objetosccalaEdit">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;
+color:rgb(61, 30, 0);</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="4">
+         <widget class="QComboBox" name="iloscpowEdit_3">
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>9</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>10</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>11</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>12</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>13</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>14</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>15</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>16</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="3" column="7">
+         <widget class="QLineEdit" name="objetoscEdit_3">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
         </item>
         <item row="4" column="2">
          <widget class="QComboBox" name="iloscserEdit_5">
@@ -52,6 +423,151 @@
             <width>40</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="9" column="5">
+         <widget class="QLineEdit" name="ciezarEdit_10">
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="7">
+         <widget class="QLineEdit" name="objetoscEdit_9">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="9">
+         <widget class="QCheckBox" name="czyzaliczonecw_2">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string>Zaliczone</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="5">
+         <widget class="QLineEdit" name="ciezarEdit_7">
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="0">
+         <widget class="QLineEdit" name="nazwacwEdit_11">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="5">
+         <widget class="QLineEdit" name="ciezarEdit_12">
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="2">
+         <widget class="QComboBox" name="iloscserEdit_11">
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
           </property>
           <item>
            <property name="text">
@@ -106,6 +622,10 @@
           <property name="layoutDirection">
            <enum>Qt::LeftToRight</enum>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
           <property name="text">
            <string/>
           </property>
@@ -114,97 +634,19 @@
           </property>
          </widget>
         </item>
-        <item row="6" column="7">
-         <widget class="QLineEdit" name="objetoscEdit_6">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>16777215</height>
-           </size>
+        <item row="3" column="9">
+         <widget class="QCheckBox" name="czyzaliczonecw_3">
+          <property name="text">
+           <string>Zaliczone</string>
           </property>
          </widget>
         </item>
-        <item row="11" column="4">
-         <widget class="QComboBox" name="iloscpowEdit_12">
-          <property name="maximumSize">
-           <size>
-            <width>40</width>
-            <height>16777215</height>
-           </size>
+        <item row="4" column="0">
+         <widget class="QLineEdit" name="nazwacwEdit_4">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
           </property>
-          <item>
-           <property name="text">
-            <string>3</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>4</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>5</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>6</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>7</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>8</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>9</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>10</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>11</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>12</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>13</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>14</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>15</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>16</string>
-           </property>
-          </item>
          </widget>
         </item>
         <item row="10" column="4">
@@ -215,6 +657,19 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
           <item>
            <property name="text">
             <string>3</string>
@@ -287,13 +742,32 @@
           </item>
          </widget>
         </item>
-        <item row="12" column="2">
-         <widget class="QComboBox" name="iloscserEdit_13">
+        <item row="4" column="1">
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="11" column="2">
+         <widget class="QComboBox" name="iloscserEdit_12">
           <property name="maximumSize">
            <size>
             <width>40</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
           </property>
           <item>
            <property name="text">
@@ -337,13 +811,24 @@
           </item>
          </widget>
         </item>
-        <item row="8" column="2">
-         <widget class="QComboBox" name="iloscserEdit_9">
+        <item row="6" column="0">
+         <widget class="QLineEdit" name="nazwacwEdit_6">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="4">
+         <widget class="QComboBox" name="iloscpowEdit_4">
           <property name="maximumSize">
            <size>
             <width>40</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
           </property>
           <item>
            <property name="text">
@@ -355,69 +840,6 @@
             <string>2</string>
            </property>
           </item>
-          <item>
-           <property name="text">
-            <string>3</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>4</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>5</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>6</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>7</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>8</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit"/>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>Rodzaj Ćwiczenia:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="9" column="7">
-         <widget class="QLineEdit" name="objetoscEdit_9">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>16777215</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="4">
-         <widget class="QComboBox" name="iloscpowEdit_3">
-          <property name="maximumSize">
-           <size>
-            <width>40</width>
-            <height>16777215</height>
-           </size>
-          </property>
           <item>
            <property name="text">
             <string>3</string>
@@ -501,15 +923,25 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
          </widget>
         </item>
-        <item row="9" column="2">
-         <widget class="QComboBox" name="iloscserEdit_10">
+        <item row="5" column="4">
+         <widget class="QComboBox" name="iloscpowEdit_6">
           <property name="maximumSize">
            <size>
             <width>40</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
           </property>
           <item>
            <property name="text">
@@ -521,46 +953,6 @@
             <string>2</string>
            </property>
           </item>
-          <item>
-           <property name="text">
-            <string>3</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>4</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>5</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>6</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>7</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>8</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="12" column="4">
-         <widget class="QComboBox" name="iloscpowEdit_13">
-          <property name="maximumSize">
-           <size>
-            <width>40</width>
-            <height>16777215</height>
-           </size>
-          </property>
           <item>
            <property name="text">
             <string>3</string>
@@ -629,6 +1021,79 @@
           <item>
            <property name="text">
             <string>16</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="6" column="7">
+         <widget class="QLineEdit" name="objetoscEdit_6">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="2">
+         <widget class="QComboBox" name="iloscserEdit_13">
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8</string>
            </property>
           </item>
          </widget>
@@ -641,75 +1106,8 @@
             <height>16777215</height>
            </size>
           </property>
-          <item>
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>2</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>3</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>4</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>5</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>6</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>7</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>8</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="11" column="5">
-         <widget class="QLineEdit" name="ciezarEdit_12">
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="10" column="9">
-         <widget class="QCheckBox" name="czyzaliczonecw_10">
-          <property name="text">
-           <string>Zaliczone</string>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="2">
-         <widget class="QComboBox" name="iloscserEdit_6">
-          <property name="maximumSize">
-           <size>
-            <width>40</width>
-            <height>16777215</height>
-           </size>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
           </property>
           <item>
            <property name="text">
@@ -753,122 +1151,45 @@
           </item>
          </widget>
         </item>
-        <item row="9" column="4">
-         <widget class="QComboBox" name="iloscpowEdit_10">
-          <property name="maximumSize">
-           <size>
-            <width>40</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <item>
-           <property name="text">
-            <string>3</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>4</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>5</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>6</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>7</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>8</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>9</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>10</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>11</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>12</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>13</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>14</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>15</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>16</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="6" column="9">
-         <widget class="QCheckBox" name="czyzaliczonecw_6">
-          <property name="text">
-           <string>Zaliczone</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="5">
-         <widget class="QLineEdit" name="ciezarEdit_4">
+        <item row="10" column="5">
+         <widget class="QLineEdit" name="ciezarEdit_11">
           <property name="maximumSize">
            <size>
             <width>50</width>
             <height>50</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="9">
-         <widget class="QCheckBox" name="czyzaliczonecw_5">
-          <property name="text">
-           <string>Zaliczone</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="5">
-         <widget class="QLabel" name="label_4">
-          <property name="text">
-           <string>Ciezar:</string>
           </property>
          </widget>
         </item>
         <item row="9" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit_9"/>
+         <widget class="QLineEdit" name="nazwacwEdit_9">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="9">
+         <widget class="QCheckBox" name="czyzaliczonecw_11">
+          <property name="text">
+           <string>Zaliczone</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
+         <widget class="QLineEdit" name="nazwacwEdit_7">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+         </widget>
         </item>
         <item row="5" column="8">
          <spacer name="horizontalSpacer_5">
@@ -886,6 +1207,150 @@
           </property>
          </spacer>
         </item>
+        <item row="10" column="0">
+         <widget class="QLineEdit" name="nazwacwEdit_10">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="7">
+         <widget class="QLineEdit" name="objetoscEdit_12">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="9">
+         <widget class="QCheckBox" name="czyzaliczonecw_4">
+          <property name="text">
+           <string>Zaliczone</string>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="0">
+         <widget class="QLineEdit" name="nazwacwEdit_12">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="4">
+         <widget class="QComboBox" name="iloscpowEdit_12">
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>9</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>10</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>11</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>12</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>13</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>14</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>15</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>16</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLineEdit" name="nazwacwEdit_3">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+         </widget>
+        </item>
         <item row="4" column="3">
          <spacer name="horizontalSpacer">
           <property name="orientation">
@@ -902,251 +1367,17 @@
           </property>
          </spacer>
         </item>
-        <item row="0" column="4">
-         <widget class="QLabel" name="label_3">
-          <property name="text">
-           <string>Ilosc powtorzen:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="5">
-         <widget class="QLineEdit" name="ciezarEdit_3">
+        <item row="3" column="5">
+         <widget class="QLineEdit" name="ciezarEdit_4">
           <property name="maximumSize">
            <size>
             <width>50</width>
             <height>50</height>
            </size>
           </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="5">
-         <widget class="QLineEdit" name="ciezarEdit_6">
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="7">
-         <widget class="QLineEdit" name="objetoscEdit_5">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>16777215</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item row="9" column="5">
-         <widget class="QLineEdit" name="ciezarEdit_10">
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="7">
-         <widget class="QLineEdit" name="objetoscEdit_3">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>16777215</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit_6"/>
-        </item>
-        <item row="12" column="5">
-         <widget class="QLineEdit" name="ciezarEdit_13">
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="8" column="7">
-         <widget class="QLineEdit" name="objetoscEdit_8">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>16777215</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="2">
-         <widget class="QLabel" name="label_2">
-          <property name="text">
-           <string>Ilosc serii:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="5">
-         <widget class="QLineEdit" name="ciezarEdit_8">
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="8" column="5">
-         <widget class="QLineEdit" name="ciezarEdit_9">
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="12" column="9">
-         <widget class="QCheckBox" name="czyzaliczonecw_12">
-          <property name="text">
-           <string>Zaliczone</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="7">
-         <widget class="QLabel" name="label_9">
-          <property name="text">
-           <string>Objetosc:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="8" column="9">
-         <widget class="QCheckBox" name="czyzaliczonecw_8">
-          <property name="text">
-           <string>Zaliczone</string>
-          </property>
-         </widget>
-        </item>
-        <item row="13" column="7">
-         <widget class="QLineEdit" name="objetosccalaEdit">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>60</width>
-            <height>16777215</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item row="11" column="2">
-         <widget class="QComboBox" name="iloscserEdit_12">
-          <property name="maximumSize">
-           <size>
-            <width>40</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <item>
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>2</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>3</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>4</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>5</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>6</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>7</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>8</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="11" column="7">
-         <widget class="QLineEdit" name="objetoscEdit_11">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>16777215</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item row="13" column="4" colspan="2">
-         <widget class="QLabel" name="label_10">
-          <property name="text">
-           <string>Laczna objetosc treningu:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="5">
-         <widget class="QLineEdit" name="ciezarEdit_5">
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -1161,6 +1392,9 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
+          </property>
           <item>
            <property name="text">
             <string>1</string>
@@ -1203,126 +1437,69 @@
           </item>
          </widget>
         </item>
-        <item row="6" column="5">
-         <widget class="QLineEdit" name="ciezarEdit_7">
+        <item row="1" column="0">
+         <widget class="QLineEdit" name="nazwacwEdit">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLineEdit" name="nazwacwEdit_2">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="10">
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Minimum</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="8" column="5">
+         <widget class="QLineEdit" name="ciezarEdit_9">
           <property name="maximumSize">
            <size>
             <width>50</width>
             <height>50</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
-        <item row="2" column="9">
-         <widget class="QCheckBox" name="czyzaliczonecw_2">
-          <property name="text">
-           <string>Zaliczone</string>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit_7"/>
-        </item>
-        <item row="3" column="9">
-         <widget class="QCheckBox" name="czyzaliczonecw_3">
-          <property name="text">
-           <string>Zaliczone</string>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="4">
-         <widget class="QComboBox" name="iloscpowEdit_7">
-          <property name="maximumSize">
-           <size>
-            <width>40</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <item>
-           <property name="text">
-            <string>3</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>4</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>5</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>6</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>7</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>8</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>9</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>10</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>11</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>12</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>13</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>14</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>15</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>16</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="10" column="7">
-         <widget class="QLineEdit" name="objetoscEdit_10">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
+        <item row="7" column="5">
+         <widget class="QLineEdit" name="ciezarEdit_8">
           <property name="maximumSize">
            <size>
             <width>50</width>
-            <height>16777215</height>
+            <height>50</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
@@ -1333,261 +1510,17 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="4">
-         <widget class="QComboBox" name="iloscpowEdit">
-          <property name="maximumSize">
-           <size>
-            <width>40</width>
-            <height>500</height>
-           </size>
-          </property>
-          <item>
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>2</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>3</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>4</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>5</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>6</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>7</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>8</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>9</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>10</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>11</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>12</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>13</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>14</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>15</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>16</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="4" column="4">
-         <widget class="QComboBox" name="iloscpowEdit_5">
+        <item row="1" column="2">
+         <widget class="QComboBox" name="iloscserEdit">
           <property name="maximumSize">
            <size>
             <width>40</width>
             <height>16777215</height>
            </size>
           </property>
-          <item>
-           <property name="text">
-            <string>3</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>4</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>5</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>6</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>7</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>8</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>9</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>10</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>11</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>12</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>13</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>14</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>15</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>16</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="10" column="5">
-         <widget class="QLineEdit" name="ciezarEdit_11">
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="8" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit_8"/>
-        </item>
-        <item row="6" column="2">
-         <widget class="QComboBox" name="iloscserEdit_7">
-          <property name="maximumSize">
-           <size>
-            <width>40</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <item>
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>2</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>3</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>4</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>5</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>6</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>7</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>8</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit_2"/>
-        </item>
-        <item row="12" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit_12"/>
-        </item>
-        <item row="4" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit_4"/>
-        </item>
-        <item row="11" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit_11"/>
-        </item>
-        <item row="10" column="2">
-         <widget class="QComboBox" name="iloscserEdit_11">
-          <property name="maximumSize">
-           <size>
-            <width>40</width>
-            <height>16777215</height>
-           </size>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0);
+</string>
           </property>
           <item>
            <property name="text">
@@ -1639,6 +1572,568 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>9</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>10</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>11</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>12</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>13</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>14</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>15</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>16</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="7" column="9">
+         <widget class="QCheckBox" name="czyzaliczonecw_7">
+          <property name="text">
+           <string>Zaliczone</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QComboBox" name="iloscserEdit_3">
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Ilosc serii:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0">
+         <widget class="QLineEdit" name="nazwacwEdit_8">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="13" column="4" colspan="3">
+         <widget class="QLabel" name="label_10">
+          <property name="font">
+           <font>
+            <family>Arimo</family>
+            <pointsize>10</pointsize>
+            <weight>9</weight>
+            <italic>true</italic>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Laczna objetosc treningu:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="9">
+         <widget class="QCheckBox" name="czyzaliczonecw_10">
+          <property name="text">
+           <string>Zaliczone</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="4">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Ilosc powtorzen:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="4">
+         <widget class="QComboBox" name="iloscpowEdit_13">
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>9</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>10</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>11</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>12</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>13</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>14</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>15</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>16</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="5" column="2">
+         <widget class="QComboBox" name="iloscserEdit_6">
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Rodzaj Ćwiczenia:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="5">
+         <widget class="QLineEdit" name="ciezarEdit_13">
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="7">
+         <widget class="QLineEdit" name="objetoscEdit_4">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="7">
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>Objetosc:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="2">
+         <widget class="QComboBox" name="iloscserEdit_9">
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="9" column="2">
+         <widget class="QComboBox" name="iloscserEdit_10">
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLineEdit" name="nazwacwEdit_5">
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="7">
+         <widget class="QLineEdit" name="objetoscEdit_10">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="7">
+         <widget class="QLineEdit" name="objetoscEdit_8">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="4">
+         <widget class="QComboBox" name="iloscpowEdit_7">
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
           <item>
            <property name="text">
             <string>3</string>
@@ -1722,10 +2217,17 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
          </widget>
         </item>
-        <item row="4" column="7">
-         <widget class="QLineEdit" name="objetoscEdit_4">
+        <item row="11" column="7">
+         <widget class="QLineEdit" name="objetoscEdit_11">
           <property name="enabled">
            <bool>false</bool>
           </property>
@@ -1735,13 +2237,21 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
          </widget>
         </item>
-        <item row="5" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit_5"/>
-        </item>
-        <item row="10" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit_10"/>
+        <item row="0" column="9">
+         <widget class="QDateEdit" name="dataEdit">
+          <property name="calendarPopup">
+           <bool>true</bool>
+          </property>
+         </widget>
         </item>
         <item row="9" column="9">
          <widget class="QCheckBox" name="czyzaliczonecw_9">
@@ -1750,8 +2260,8 @@
           </property>
          </widget>
         </item>
-        <item row="12" column="7">
-         <widget class="QLineEdit" name="objetoscEdit_12">
+        <item row="2" column="7">
+         <widget class="QLineEdit" name="objetoscEdit_2">
           <property name="enabled">
            <bool>false</bool>
           </property>
@@ -1761,28 +2271,173 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
          </widget>
         </item>
-        <item row="4" column="1">
-         <spacer name="horizontalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Fixed</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="7" column="9">
-         <widget class="QCheckBox" name="czyzaliczonecw_7">
+        <item row="8" column="9">
+         <widget class="QCheckBox" name="czyzaliczonecw_8">
           <property name="text">
            <string>Zaliczone</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="5">
+         <widget class="QLineEdit" name="ciezarEdit_6">
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="4">
+         <widget class="QComboBox" name="iloscpowEdit">
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>500</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0);</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>9</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>10</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>11</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>12</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>13</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>14</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>15</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>16</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="4" column="5">
+         <widget class="QLineEdit" name="ciezarEdit_5">
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="9">
+         <widget class="QCheckBox" name="czyzaliczonecw_5">
+          <property name="text">
+           <string>Zaliczone</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="7">
+         <widget class="QLineEdit" name="objetoscEdit_5">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
@@ -1802,296 +2457,10 @@
           </property>
          </spacer>
         </item>
-        <item row="3" column="0">
-         <widget class="QLineEdit" name="nazwacwEdit_3"/>
-        </item>
-        <item row="11" column="9">
-         <widget class="QCheckBox" name="czyzaliczonecw_11">
+        <item row="0" column="5">
+         <widget class="QLabel" name="label_4">
           <property name="text">
-           <string>Zaliczone</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="4">
-         <widget class="QComboBox" name="iloscpowEdit_4">
-          <property name="maximumSize">
-           <size>
-            <width>40</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <item>
-           <property name="text">
-            <string>3</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>4</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>5</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>6</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>7</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>8</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>9</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>10</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>11</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>12</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>13</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>14</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>15</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>16</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="2" column="7">
-         <widget class="QLineEdit" name="objetoscEdit_2">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>16777215</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="2">
-         <widget class="QComboBox" name="iloscserEdit_3">
-          <property name="maximumSize">
-           <size>
-            <width>40</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <item>
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>2</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>3</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>4</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>5</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>6</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>7</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>8</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="0" column="9">
-         <widget class="QDateEdit" name="dataEdit"/>
-        </item>
-        <item row="5" column="4">
-         <widget class="QComboBox" name="iloscpowEdit_6">
-          <property name="maximumSize">
-           <size>
-            <width>40</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <item>
-           <property name="text">
-            <string>3</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>4</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>5</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>6</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>7</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>8</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>9</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>10</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>11</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>12</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>13</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>14</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>15</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>16</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="1" column="2">
-         <widget class="QComboBox" name="iloscserEdit">
-          <property name="maximumSize">
-           <size>
-            <width>40</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <item>
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>2</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>3</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>4</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>5</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>6</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>7</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>8</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="4" column="9">
-         <widget class="QCheckBox" name="czyzaliczonecw_4">
-          <property name="text">
-           <string>Zaliczone</string>
+           <string>Ciezar:</string>
           </property>
          </widget>
         </item>
@@ -2103,6 +2472,19 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
           <item>
            <property name="text">
             <string>3</string>
@@ -2175,10 +2557,109 @@
           </item>
          </widget>
         </item>
-        <item row="14" column="0" colspan="6">
+        <item row="9" column="4">
+         <widget class="QComboBox" name="iloscpowEdit_10">
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgb(61, 30, 0)</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>9</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>10</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>11</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>12</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>13</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>14</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>15</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>16</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="14" column="0" colspan="7">
          <widget class="QDialogButtonBox" name="buttonBox">
           <property name="enabled">
            <bool>true</bool>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>650</width>
+            <height>0</height>
+           </size>
           </property>
           <property name="maximumSize">
            <size>
@@ -2186,11 +2667,146 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="contextMenuPolicy">
+           <enum>Qt::CustomContextMenu</enum>
+          </property>
+          <property name="acceptDrops">
+           <bool>true</bool>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
           <property name="autoFillBackground">
            <bool>false</bool>
           </property>
           <property name="standardButtons">
-           <set>QDialogButtonBox::Apply|QDialogButtonBox::Cancel|QDialogButtonBox::Ok|QDialogButtonBox::RestoreDefaults</set>
+           <set>QDialogButtonBox::Apply|QDialogButtonBox::Cancel|QDialogButtonBox::Ok|QDialogButtonBox::Reset|QDialogButtonBox::RestoreDefaults</set>
+          </property>
+          <property name="centerButtons">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_3">
+       <layout class="QFormLayout" name="formLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Rodzaj cwiczenia:     </string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QComboBox" name="rodzajCardioEdit">
+          <property name="maximumSize">
+           <size>
+            <width>200</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <item>
+           <property name="text">
+            <string>Bieganie</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Spacer</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Jazda na rowerze</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Plywanie</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>Dystans:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="dystansCardioEdit">
+          <property name="maximumSize">
+           <size>
+            <width>150</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="placeholderText">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>Czas trwania:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QTimeEdit" name="timeCardioEdit">
+          <property name="maximumSize">
+           <size>
+            <width>75</width>
+            <height>16777215</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>Data:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QDateEdit" name="dataCardioEdit">
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="calendarPopup">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QDialogButtonBox" name="buttonBoxCardio">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="contextMenuPolicy">
+           <enum>Qt::DefaultContextMenu</enum>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="standardButtons">
+           <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
           </property>
          </widget>
         </item>
@@ -2205,11 +2821,18 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>859</width>
-     <height>20</height>
+     <width>939</width>
+     <height>21</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(47, 47, 47);
+color: white;</string>
+   </property>
    <widget class="QMenu" name="menu">
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="title">
      <string>Menu</string>
     </property>
@@ -2220,7 +2843,6 @@
    </widget>
    <addaction name="menu"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="actionDodaj">
    <property name="text">
     <string>Dodaj trening silowy</string>
@@ -2242,6 +2864,83 @@
    </property>
   </action>
  </widget>
+ <tabstops>
+  <tabstop>iloscpowEdit_12</tabstop>
+  <tabstop>iloscpowEdit_11</tabstop>
+  <tabstop>iloscserEdit_13</tabstop>
+  <tabstop>iloscserEdit_9</tabstop>
+  <tabstop>nazwacwEdit</tabstop>
+  <tabstop>objetoscEdit_9</tabstop>
+  <tabstop>iloscpowEdit_3</tabstop>
+  <tabstop>objetoscEdit_7</tabstop>
+  <tabstop>iloscserEdit_10</tabstop>
+  <tabstop>iloscpowEdit_13</tabstop>
+  <tabstop>iloscserEdit_4</tabstop>
+  <tabstop>ciezarEdit_12</tabstop>
+  <tabstop>czyzaliczonecw_10</tabstop>
+  <tabstop>iloscserEdit_6</tabstop>
+  <tabstop>iloscpowEdit_10</tabstop>
+  <tabstop>czyzaliczonecw_6</tabstop>
+  <tabstop>ciezarEdit_4</tabstop>
+  <tabstop>czyzaliczonecw_5</tabstop>
+  <tabstop>nazwacwEdit_9</tabstop>
+  <tabstop>ciezarEdit_3</tabstop>
+  <tabstop>ciezarEdit_6</tabstop>
+  <tabstop>objetoscEdit_5</tabstop>
+  <tabstop>ciezarEdit_10</tabstop>
+  <tabstop>objetoscEdit_3</tabstop>
+  <tabstop>nazwacwEdit_6</tabstop>
+  <tabstop>ciezarEdit_13</tabstop>
+  <tabstop>objetoscEdit_8</tabstop>
+  <tabstop>ciezarEdit_8</tabstop>
+  <tabstop>ciezarEdit_9</tabstop>
+  <tabstop>czyzaliczonecw_12</tabstop>
+  <tabstop>czyzaliczonecw_8</tabstop>
+  <tabstop>objetosccalaEdit</tabstop>
+  <tabstop>iloscserEdit_12</tabstop>
+  <tabstop>objetoscEdit_11</tabstop>
+  <tabstop>ciezarEdit_5</tabstop>
+  <tabstop>iloscserEdit_8</tabstop>
+  <tabstop>ciezarEdit_7</tabstop>
+  <tabstop>czyzaliczonecw_2</tabstop>
+  <tabstop>nazwacwEdit_7</tabstop>
+  <tabstop>czyzaliczonecw_3</tabstop>
+  <tabstop>iloscpowEdit_7</tabstop>
+  <tabstop>objetoscEdit_10</tabstop>
+  <tabstop>czyzaliczonecw</tabstop>
+  <tabstop>iloscpowEdit</tabstop>
+  <tabstop>iloscpowEdit_5</tabstop>
+  <tabstop>ciezarEdit_11</tabstop>
+  <tabstop>nazwacwEdit_8</tabstop>
+  <tabstop>iloscserEdit_7</tabstop>
+  <tabstop>nazwacwEdit_2</tabstop>
+  <tabstop>nazwacwEdit_12</tabstop>
+  <tabstop>nazwacwEdit_4</tabstop>
+  <tabstop>nazwacwEdit_11</tabstop>
+  <tabstop>iloscserEdit_11</tabstop>
+  <tabstop>iloscpowEdit_8</tabstop>
+  <tabstop>objetoscEdit</tabstop>
+  <tabstop>objetoscEdit_4</tabstop>
+  <tabstop>nazwacwEdit_5</tabstop>
+  <tabstop>nazwacwEdit_10</tabstop>
+  <tabstop>czyzaliczonecw_9</tabstop>
+  <tabstop>objetoscEdit_12</tabstop>
+  <tabstop>czyzaliczonecw_7</tabstop>
+  <tabstop>nazwacwEdit_3</tabstop>
+  <tabstop>czyzaliczonecw_11</tabstop>
+  <tabstop>iloscpowEdit_4</tabstop>
+  <tabstop>objetoscEdit_2</tabstop>
+  <tabstop>iloscserEdit_3</tabstop>
+  <tabstop>dataEdit</tabstop>
+  <tabstop>iloscpowEdit_6</tabstop>
+  <tabstop>iloscserEdit</tabstop>
+  <tabstop>czyzaliczonecw_4</tabstop>
+  <tabstop>iloscpowEdit_9</tabstop>
+  <tabstop>ciezarEdit</tabstop>
+  <tabstop>iloscserEdit_5</tabstop>
+  <tabstop>listWidget</tabstop>
+  <tabstop>objetoscEdit_6</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

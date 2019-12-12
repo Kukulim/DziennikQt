@@ -26,3 +26,21 @@ void KsiazkaKontener::skasujKontener(Kontener *wpis)
         delete wpis;
 
 }
+
+KontenerCardio *KsiazkaKontener::stwozKontenerCardio()
+{
+    auto wynik = new KontenerCardio(this);
+    if(wynik!=nullptr){
+        wynikWKsiazceCardio.push_back(wynik);
+        wynik->setNazwaTreningu("Trening cardio");
+        QDate date = QDate::currentDate();
+        wynik->setDataTreninguCardio(date);
+    }
+    return wynik;
+}
+
+void KsiazkaKontener::skasujKontenerCardio(KontenerCardio* wpis)
+{
+    wynikWKsiazceCardio.removeOne(wpis);
+    delete wpis;
+}

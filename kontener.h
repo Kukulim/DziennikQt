@@ -32,16 +32,11 @@ public:
     int getCiezar(int miejsceWTablicy) const;
     void setCiezar(const int &value, int miejsceWTablicy);
 
-    int getObjetoscCwiczenia(int miejsceWTablicy) const;
-    void setObjetoscCwiczenia(int miejsceWTablicy);
-
-    int getObjetoscTreningu() const;
-    void setObjetoscTreningu();
-
     bool getCzyZaliczone(int miejsceWTablicy) const;
     void setCzyZaliczone(const bool &value, int miejsceWTablicy);
 
-
+    int getObjetoscTreningu() const;
+    void setObjetoscTreningu(int value);
 
 signals:
 
@@ -52,7 +47,6 @@ private:
     int iloscSerii[12]={0};
     int iloscPowtorzen[12]={0};
     int ciezar[12]={0};
-    int objetoscCwiczenia[12]={0};
     int objetoscTreningu=0;
     QString nazwaCwiczenia[12]={nullptr};
     QString nazwaTreningu="";

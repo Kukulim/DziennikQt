@@ -1,14 +1,13 @@
 #include "kontener.h"
-#include <QDebug>
 
 Kontener::Kontener(QObject *parent) : QObject(parent)
 {
-    qDebug()<<"stworzony";
+
 }
 
 Kontener::~Kontener()
 {
-    qDebug()<<"usuniety";
+
 }
 
 QString Kontener::getNazwaTreningu() const
@@ -71,19 +70,6 @@ void Kontener::setCiezar(const int &value, const int miejsceWTablicy)
     ciezar[miejsceWTablicy]=value;
 }
 
-int Kontener::getObjetoscTreningu() const
-{
-    return objetoscTreningu;
-}
-
-void Kontener::setObjetoscTreningu()
-{
-    for (int i = 0; i<12 ;++i)
-    {
-        objetoscTreningu+=getObjetoscCwiczenia(i);
-    }
-}
-
 bool Kontener::getCzyZaliczone(int miejsceWTablicy) const
 {
     if (czyZaliczone[miejsceWTablicy]==true)
@@ -97,13 +83,14 @@ void Kontener::setCzyZaliczone(const bool &value, int miejsceWTablicy)
     czyZaliczone[miejsceWTablicy]=value;
 }
 
-int Kontener::getObjetoscCwiczenia(int miejsceWTablicy) const
+int Kontener::getObjetoscTreningu() const
 {
-    return objetoscCwiczenia[miejsceWTablicy];
+    return objetoscTreningu;
 }
 
-void Kontener::setObjetoscCwiczenia(int miejsceWTablicy)
+void Kontener::setObjetoscTreningu(int value)
 {
-    objetoscCwiczenia[miejsceWTablicy]=(iloscSerii[miejsceWTablicy]+1)*(iloscPowtorzen[miejsceWTablicy]+1)*ciezar[miejsceWTablicy];
+    objetoscTreningu = value;
 }
+
 

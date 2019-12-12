@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QHash>
+#include <QMessageBox>
 
 #include "ksiazkakontener.h"
 
@@ -34,11 +35,25 @@ private slots:
 
     void WyswietlObjetosc();
 
+    void on_actionDodaj_trening_cardio_triggered();
+
+    void OkZapiszCardio();
+
+    void PrzywrocDomyslneCardio();
+
+    void WczytajPoprzedniTrening();
+
+
+
+    void on_listWidget_itemDoubleClicked();
 
 private:
     Ui::MainWindow *ui;
     KsiazkaKontener m_ksiazka;
     QHash<QListWidgetItem*,Kontener*> wpisMapa;
+    QHash<QListWidgetItem*,KontenerCardio*> wpisMapaCardio;
+    QMessageBox *mojbox= new QMessageBox(this);
+
 
     void wlaczPolaczenia();
 
