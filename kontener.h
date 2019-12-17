@@ -38,6 +38,7 @@ public:
     int getObjetoscTreningu() const;
     void setObjetoscTreningu(int value);
 
+
 signals:
 
 public slots:

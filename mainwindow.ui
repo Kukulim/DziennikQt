@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>939</width>
+    <width>1014</width>
     <height>515</height>
    </rect>
   </property>
@@ -43,6 +43,23 @@ background-color:rgb(47, 47, 47)
         <string notr="true"/>
        </property>
        <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="1">
+         <widget class="QLabel" name="label_12">
+          <property name="text">
+           <string>Kaledarz:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="label_13">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string>Statystyki:</string>
+          </property>
+         </widget>
+        </item>
         <item row="0" column="0">
          <widget class="QLabel" name="label_11">
           <property name="text">
@@ -51,25 +68,28 @@ background-color:rgb(47, 47, 47)
          </widget>
         </item>
         <item row="3" column="1">
-         <widget class="QGraphicsView" name="graphicsView">
-          <property name="styleSheet">
-           <string notr="true">border: 1px solid  rgb(61, 30, 0);</string>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <property name="spacing">
+           <number>15</number>
           </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLabel" name="label_12">
-          <property name="text">
-           <string>Kaledarz:</string>
+          <property name="topMargin">
+           <number>0</number>
           </property>
-         </widget>
-        </item>
-        <item row="1" column="0" rowspan="3">
-         <widget class="QListWidget" name="listWidget">
-          <property name="styleSheet">
-           <string notr="true">border: 1px solid  rgb(61, 30, 0);</string>
-          </property>
-         </widget>
+          <item>
+           <widget class="QLabel" name="label_15">
+            <property name="text">
+             <string>Trening Silowy:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_14">
+            <property name="text">
+             <string>Trening Cardio:</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
         <item row="1" column="1">
          <widget class="QCalendarWidget" name="calendarWidget">
@@ -91,15 +111,204 @@ selection-background-color:transparent;
           </property>
          </widget>
         </item>
-        <item row="2" column="1">
-         <widget class="QLabel" name="label_13">
+        <item row="1" column="0" rowspan="4">
+         <widget class="QListWidget" name="listWidget">
           <property name="styleSheet">
-           <string notr="true"/>
-          </property>
-          <property name="text">
-           <string>Statystyki:</string>
+           <string notr="true">border: 1px solid  rgb(61, 30, 0);</string>
           </property>
          </widget>
+        </item>
+        <item row="4" column="1">
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <property name="spacing">
+           <number>15</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <layout class="QGridLayout" name="gridLayout_5">
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="ostatniTreningSolowyDataEdit">
+              <property name="styleSheet">
+               <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="ostatniTreningSilowyObjetoscEdit">
+              <property name="styleSheet">
+               <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_20">
+              <property name="text">
+               <string>Objetosc:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_16">
+              <property name="text">
+               <string>Ostatni trening:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_19">
+              <property name="text">
+               <string>Data:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLabel" name="label_18">
+              <property name="text">
+               <string>Wszystkie treningi:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QLineEdit" name="wszystkieTreningiSiloweIloscEdit">
+              <property name="styleSheet">
+               <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="label_21">
+              <property name="text">
+               <string>Ilosc:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="label_26">
+              <property name="text">
+               <string>Laczna Objetosc:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QLineEdit" name="wszystkieTreningiSiloweObjetoscEdit">
+              <property name="styleSheet">
+               <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <property name="topMargin">
+             <number>10</number>
+            </property>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="lineEdit_2">
+              <property name="styleSheet">
+               <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLineEdit" name="lineEdit_7">
+              <property name="styleSheet">
+               <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="lineEdit_5">
+              <property name="styleSheet">
+               <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_23">
+              <property name="text">
+               <string>Jazda rowerem:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="lineEdit_6">
+              <property name="styleSheet">
+               <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QLineEdit" name="lineEdit_8">
+              <property name="styleSheet">
+               <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_24">
+              <property name="text">
+               <string>Spacer:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_22">
+              <property name="text">
+               <string>Plywanie:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="label_25">
+              <property name="text">
+               <string>Laczny czas:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_17">
+              <property name="text">
+               <string>Bieganie:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <spacer name="verticalSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>25</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
@@ -2680,12 +2889,44 @@ border: 1px solid gray;</string>
            <bool>false</bool>
           </property>
           <property name="standardButtons">
-           <set>QDialogButtonBox::Apply|QDialogButtonBox::Cancel|QDialogButtonBox::Ok|QDialogButtonBox::Reset|QDialogButtonBox::RestoreDefaults</set>
+           <set>QDialogButtonBox::Apply|QDialogButtonBox::Cancel|QDialogButtonBox::Ok|QDialogButtonBox::RestoreDefaults</set>
           </property>
           <property name="centerButtons">
            <bool>false</bool>
           </property>
          </widget>
+        </item>
+        <item row="13" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QPushButton" name="ZestawA">
+            <property name="text">
+             <string>Zestaw A</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="ZestawB">
+            <property name="text">
+             <string>Zestaw B</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="WczytajZestaw">
+            <property name="text">
+             <string>Wczytaj Zestaw</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="ZapiszZestaw">
+            <property name="text">
+             <string>Zapisz Zestaw</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
@@ -2821,7 +3062,7 @@ border: 1px solid gray;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>939</width>
+     <width>1014</width>
      <height>21</height>
     </rect>
    </property>

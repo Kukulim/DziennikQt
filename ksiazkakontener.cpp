@@ -10,10 +10,10 @@ Kontener *KsiazkaKontener::stwozKontener()
     auto wynik = new Kontener(this);
     if(wynik!=nullptr){
     wynikWKsiazce.push_back(wynik);
-    emit kontenerStworzony(wynik);
     wynik->setNazwaTreningu("Trening silowy");
     QDate date = QDate::currentDate();
     wynik->setDataCwiczenia(date);
+    dodajIloscTreningowSilowych();
     }
     return wynik;
 
@@ -21,9 +21,10 @@ Kontener *KsiazkaKontener::stwozKontener()
 
 void KsiazkaKontener::skasujKontener(Kontener *wpis)
 {
-        emit kontenerUsuniety();
+
         wynikWKsiazce.removeOne(wpis);
         delete wpis;
+        usunIloscTreningowSilowych();
 
 }
 
@@ -43,4 +44,39 @@ void KsiazkaKontener::skasujKontenerCardio(KontenerCardio* wpis)
 {
     wynikWKsiazceCardio.removeOne(wpis);
     delete wpis;
+}
+QString KsiazkaKontener::getZestawA(int miejsceWTablicy) const
+{
+    return zestawA[miejsceWTablicy];
+}
+void KsiazkaKontener::setZestawA(const QString &value, int miejsceWTablicy)
+{
+    zestawA[miejsceWTablicy]=value;
+}
+QString KsiazkaKontener::getZestawB(int miejsceWTablicy) const
+{
+    return zestawB[miejsceWTablicy];
+}
+void KsiazkaKontener::setZestawB(const QString &value, int miejsceWTablicy)
+{
+    zestawB[miejsceWTablicy]=value;
+}
+char KsiazkaKontener::getWyznacznikZestawuCwiczen() const
+{
+    return wyznacznikZestawuCwiczen;
+}
+
+void KsiazkaKontener::setWyznacznikZestawuCwiczen(char value)
+{
+    wyznacznikZestawuCwiczen = value;
+}
+
+void KsiazkaKontener::dodajIloscTreningowSilowych()
+{
+    iloscTreningowSilowych++;
+}
+
+void KsiazkaKontener::usunIloscTreningowSilowych()
+{
+    iloscTreningowSilowych--;
 }

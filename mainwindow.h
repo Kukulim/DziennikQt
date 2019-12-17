@@ -43,9 +43,15 @@ private slots:
 
     void WczytajPoprzedniTrening();
 
-
-
     void on_listWidget_itemDoubleClicked();
+
+    void on_ZestawA_clicked();
+
+    void on_ZestawB_clicked();
+
+    void on_ZapiszZestaw_clicked();
+
+    void on_WczytajZestaw_clicked();
 
 private:
     Ui::MainWindow *ui;

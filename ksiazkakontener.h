@@ -20,14 +20,26 @@ public:
     KontenerCardio* stwozKontenerCardio();
     void skasujKontenerCardio(KontenerCardio* wpis);
 
+    QString getZestawA(int miejsceWTablicy) const;
+    void setZestawA(const QString &value, int miejsceWTablicy);
+
+    QString getZestawB(int miejsceWTablicy) const;
+    void setZestawB(const QString &value, int miejsceWTablicy);
+
+    char getWyznacznikZestawuCwiczen() const;
+    void setWyznacznikZestawuCwiczen(char value);
+
+    void dodajIloscTreningowSilowych();
+    void usunIloscTreningowSilowych();
 
 
 signals:
-
-    void kontenerStworzony(Kontener *kontener);
-    void kontenerUsuniety();
-
 public slots:
+private:
+    QString zestawA[12]={nullptr};
+    QString zestawB[12]={nullptr};
+    char wyznacznikZestawuCwiczen ='z';
+    int iloscTreningowSilowych=0;
 };
 
 #endif // KSIAZKAKONTENER_H
