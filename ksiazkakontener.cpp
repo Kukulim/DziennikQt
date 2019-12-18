@@ -80,3 +80,25 @@ void KsiazkaKontener::usunIloscTreningowSilowych()
 {
     iloscTreningowSilowych--;
 }
+
+int KsiazkaKontener::getIloscTreningowSilowych() const
+{
+    return iloscTreningowSilowych;
+}
+
+int KsiazkaKontener::getObjetoscWszystkichTreningowSilowych() const
+{
+    return objetoscWszystkichTreningowSilowych;
+}
+
+void KsiazkaKontener::setObjetoscWszystkichTreningowSilowych()
+{
+    int wynik=0;
+    for(int i=0;i<wynikWKsiazce.size();i++)
+    {
+        wynik+=wynikWKsiazce[i]->getObjetoscTreningu();
+    }
+    objetoscWszystkichTreningowSilowych=wynik;
+
+
+}

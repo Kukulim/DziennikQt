@@ -18,9 +18,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->buttonBox->button(QDialogButtonBox::RestoreDefaults)->setText("Przywroc domyslne");
     ui->buttonBoxCardio->button(QDialogButtonBox::Ok)->setText("Zapisz");
     setCentralWidget(ui->stackedWidget);
-    //QTabWidget *statystykiSilowy = new QTabWidget;
-    //ui->stackedWidget->addWidget(statystykiSilowy);
-
 }
 
 MainWindow::~MainWindow()
@@ -91,28 +88,28 @@ void MainWindow::PrzywrocDomyslneCardio()
     ui->dataCardioEdit->setDate(wpis->getDataTreninguCardio());
 }
 
-void MainWindow::WczytajPoprzedniTrening()
-{
+//void MainWindow::WczytajPoprzedniTrening()
+//{
 
-    if (wpisMapa.size()>0)
-        {
-        int pozycja =0;
-        pozycja= ui->listWidget->currentRow();
-            for(int i =1;i<=pozycja;i++)
-            {
-            auto listItem = ui->listWidget->item(pozycja-i);
-            auto wpis = wpisMapa.value(listItem);
-            if(wpis)
-                {
-                //ui->;
+//    if (wpisMapa.size()>0)
+//        {
+//        int pozycja =0;
+//        pozycja= ui->listWidget->currentRow();
+//            for(int i =1;i<=pozycja;i++)
+//            {
+//            auto listItem = ui->listWidget->item(pozycja-i);
+//            auto wpis = wpisMapa.value(listItem);
+//            if(wpis)
+//                {
+//                ui->ostatniTreningSilowyDataEdit->setText(wpis->getDataCwiczenia().toString());
+//                ui->ostatniTreningSilowyObjetoscEdit->setText(QString::number(wpis->getObjetoscTreningu()));
+//                break;
+//                }
 
-                break;
-                }
+//            }
+//        }
 
-            }
-        }
-
-}
+//}
 
 void MainWindow::on_actionUsun_triggered()
 {
@@ -145,7 +142,9 @@ void MainWindow::on_actionUsun_triggered()
             m_ksiazka.skasujKontener(wpis);
             wpisMapa.remove(listItem);
             delete listItem;
-
+            ui->wszystkieTreningiSiloweIloscEdit->setText(QString::number(m_ksiazka.getIloscTreningowSilowych()));
+            m_ksiazka.setObjetoscWszystkichTreningowSilowych();
+            ui->wszystkieTreningiSiloweObjetoscEdit->setText(QString::number(m_ksiazka.getObjetoscWszystkichTreningowSilowych()));
             AnulujZapisz();
         }
     }
@@ -276,7 +275,6 @@ void MainWindow::Okzapisz()
     wpis->setCzyZaliczone(ui->czyzaliczonecw_10->checkState(),9);
     wpis->setCzyZaliczone(ui->czyzaliczonecw_11->checkState(),10);
     wpis->setCzyZaliczone(ui->czyzaliczonecw_12->checkState(),11);
-    wpis->setObjetoscTreningu(ui->objetosccalaEdit->text().toInt());
 
     listItem->setText((wpis->getDataCwiczenia().toString())+" "+(wpis->getNazwaTreningu()));
     listItem->setForeground(Qt::green);
@@ -296,6 +294,17 @@ void MainWindow::Okzapisz()
 
     zaznaczonyKolor.setForeground(Qt::black);
     ui->calendarWidget->setDateTextFormat(ui->calendarWidget->selectedDate(),zaznaczonyKolor);
+    ui->wszystkieTreningiSiloweIloscEdit->setText(QString::number(m_ksiazka.getIloscTreningowSilowych()));
+
+    WyswietlObjetosc();
+    wpis->setObjetoscTreningu(ui->objetosccalaEdit->text().toInt());
+
+    ui->ostatniTreningSilowyDataEdit->setText(wpis->getDataCwiczenia().toString());
+    ui->ostatniTreningSilowyObjetoscEdit->setText(QString::number(wpis->getObjetoscTreningu()));
+
+    m_ksiazka.setObjetoscWszystkichTreningowSilowych();
+    ui->wszystkieTreningiSiloweObjetoscEdit->setText(QString::number(m_ksiazka.getObjetoscWszystkichTreningowSilowych()));
+
     AnulujZapisz();
 }
 

@@ -33,13 +33,19 @@ public:
     void usunIloscTreningowSilowych();
 
 
+    int getIloscTreningowSilowych() const;
+
+    int getObjetoscWszystkichTreningowSilowych() const;
+    void setObjetoscWszystkichTreningowSilowych();
+
 signals:
 public slots:
 private:
-    QString zestawA[12]={nullptr};
-    QString zestawB[12]={nullptr};
-    char wyznacznikZestawuCwiczen ='z';
-    int iloscTreningowSilowych=0;
+    QString zestawA[12] = {nullptr};
+    QString zestawB[12] = {nullptr};
+    char wyznacznikZestawuCwiczen = 'z';
+    int iloscTreningowSilowych = 0;
+    int objetoscWszystkichTreningowSilowych = 0;
 };
 
 #endif // KSIAZKAKONTENER_H

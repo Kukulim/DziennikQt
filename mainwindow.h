@@ -41,7 +41,7 @@ private slots:
 
     void PrzywrocDomyslneCardio();
 
-    void WczytajPoprzedniTrening();
+    //void WczytajPoprzedniTrening();
 
     void on_listWidget_itemDoubleClicked();
 

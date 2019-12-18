@@ -119,7 +119,7 @@ selection-background-color:transparent;
          </widget>
         </item>
         <item row="4" column="1">
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <layout class="QHBoxLayout" name="horizontalLayoutStatystyki">
           <property name="spacing">
            <number>15</number>
           </property>
@@ -127,43 +127,13 @@ selection-background-color:transparent;
            <number>0</number>
           </property>
           <item>
-           <layout class="QGridLayout" name="gridLayout_5">
+           <layout class="QGridLayout" name="gridLayoutStatystyki">
             <property name="topMargin">
              <number>0</number>
             </property>
             <property name="bottomMargin">
              <number>0</number>
             </property>
-            <item row="2" column="1">
-             <widget class="QLineEdit" name="ostatniTreningSolowyDataEdit">
-              <property name="styleSheet">
-               <string notr="true">background-color:rgb(98, 98, 98);
-border: 1px solid gray;</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="1">
-             <widget class="QLineEdit" name="ostatniTreningSilowyObjetoscEdit">
-              <property name="styleSheet">
-               <string notr="true">background-color:rgb(98, 98, 98);
-border: 1px solid gray;</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="0">
-             <widget class="QLabel" name="label_20">
-              <property name="text">
-               <string>Objetosc:</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1">
-             <widget class="QLabel" name="label_16">
-              <property name="text">
-               <string>Ostatni trening:</string>
-              </property>
-             </widget>
-            </item>
             <item row="2" column="0">
              <widget class="QLabel" name="label_19">
               <property name="text">
@@ -178,8 +148,23 @@ border: 1px solid gray;</string>
               </property>
              </widget>
             </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="label_26">
+              <property name="text">
+               <string>Laczna Objetosc:</string>
+              </property>
+             </widget>
+            </item>
             <item row="5" column="1">
              <widget class="QLineEdit" name="wszystkieTreningiSiloweIloscEdit">
+              <property name="styleSheet">
+               <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="ostatniTreningSilowyObjetoscEdit">
               <property name="styleSheet">
                <string notr="true">background-color:rgb(98, 98, 98);
 border: 1px solid gray;</string>
@@ -193,15 +178,30 @@ border: 1px solid gray;</string>
               </property>
              </widget>
             </item>
-            <item row="6" column="0">
-             <widget class="QLabel" name="label_26">
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_16">
               <property name="text">
-               <string>Laczna Objetosc:</string>
+               <string>Ostatni trening:</string>
               </property>
              </widget>
             </item>
             <item row="6" column="1">
              <widget class="QLineEdit" name="wszystkieTreningiSiloweObjetoscEdit">
+              <property name="styleSheet">
+               <string notr="true">background-color:rgb(98, 98, 98);
+border: 1px solid gray;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_20">
+              <property name="text">
+               <string>Objetosc:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="ostatniTreningSilowyDataEdit">
               <property name="styleSheet">
                <string notr="true">background-color:rgb(98, 98, 98);
 border: 1px solid gray;</string>
@@ -3063,7 +3063,7 @@ border: 1px solid gray;</string>
      <x>0</x>
      <y>0</y>
      <width>1014</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
    <property name="styleSheet">
