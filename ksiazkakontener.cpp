@@ -105,7 +105,7 @@ void KsiazkaKontener::setObjetoscWszystkichTreningowSilowych()
 
 int KsiazkaKontener::getCzasWszystkichSpacerow() const
 {
-    return czasWszystkichSpacerow;
+    return czasWszystkichSpacerow/60;
 }
 
 double KsiazkaKontener::getDydtansWszystkichSpacerow() const
@@ -115,7 +115,7 @@ double KsiazkaKontener::getDydtansWszystkichSpacerow() const
 
 int KsiazkaKontener::getCzasWszystkichRowerow() const
 {
-    return czasWszystkichRowerow;
+    return czasWszystkichRowerow/60;
 }
 
 double KsiazkaKontener::getDydtansWszystkichRowerow() const
@@ -125,7 +125,7 @@ double KsiazkaKontener::getDydtansWszystkichRowerow() const
 
 int KsiazkaKontener::getCzasWszystkichPlywan() const
 {
-    return czasWszystkichPlywan;
+    return czasWszystkichPlywan/60;
 }
 
 double KsiazkaKontener::getDydtansWszystkichPlywan() const
@@ -135,12 +135,21 @@ double KsiazkaKontener::getDydtansWszystkichPlywan() const
 
 int KsiazkaKontener::getCzasWszystkichTreningowCardio() const
 {
-    return czasWszystkichTreningowCardio;
+    return czasWszystkichTreningowCardio/60;
 }
 
 double KsiazkaKontener::getDydtansWszystkichTreningowCardio() const
 {
     return dydtansWszystkichTreningowCardio;
+}
+int KsiazkaKontener::getCzasWszystkichBiegow() const
+{
+    return czasWszystkichBiegow/60;
+}
+
+double KsiazkaKontener::getDydtansWszystkichBiegow() const
+{
+    return dydtansWszystkichBiegow;
 }
 
 void KsiazkaKontener::setDydtansWszystkichRodzaji()
@@ -179,19 +188,14 @@ void KsiazkaKontener::setDydtansWszystkichRodzaji()
         dydtansWszystkichSpacerow=wynikSpacer;
         dydtansWszystkichRowerow=wynikRower;
         dydtansWszystkichPlywan=wynikPlywanie;
+        dydtansWszystkichTreningowCardio=wynikRower+wynikSpacer+wynikBieganie+wynikPlywanie;
+
         czasWszystkichBiegow=czasBiegow;
         czasWszystkichSpacerow=czasSpacerow;
         czasWszystkichRowerow=czasRowerow;
         czasWszystkichPlywan=czasPlywan;
+        czasWszystkichTreningowCardio=czasWszystkichBiegow+czasWszystkichPlywan+czasWszystkichRowerow+czasWszystkichSpacerow;
     }
 }
 
-int KsiazkaKontener::getCzasWszystkichBiegow() const
-{
-    return czasWszystkichBiegow;
-}
 
-double KsiazkaKontener::getDydtansWszystkichBiegow() const
-{
-    return dydtansWszystkichBiegow;
-}

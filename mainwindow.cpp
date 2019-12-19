@@ -86,6 +86,9 @@ void MainWindow::OkZapiszCardio()
     ui->plywanieCzasEdit->setText(QString::number(m_ksiazka.getCzasWszystkichPlywan()));
     ui->plywanieDystansEdit->setText(QString::number(m_ksiazka.getDydtansWszystkichPlywan()));
 
+    ui->lacznyCzasCardioEdit->setText(QString::number(m_ksiazka.getCzasWszystkichTreningowCardio()));
+    ui->lacznyDystansCardioEdit->setText(QString::number(m_ksiazka.getDydtansWszystkichTreningowCardio()));
+
     AnulujZapisz();
 
 }
@@ -189,6 +192,22 @@ void MainWindow::on_actionUsun_triggered()
             m_ksiazka.skasujKontenerCardio(wpis2);
             wpisMapaCardio.remove(listItem);
             delete listItem;
+
+            m_ksiazka.setDydtansWszystkichRodzaji();
+            ui->bieganieCzasEdit->setText(QString::number(m_ksiazka.getCzasWszystkichBiegow()));
+            ui->bieganieDystansEdit->setText(QString::number(m_ksiazka.getDydtansWszystkichBiegow()));
+
+            ui->spacerCzasEdit->setText(QString::number(m_ksiazka.getCzasWszystkichSpacerow()));
+            ui->spacerDystansEdit->setText(QString::number(m_ksiazka.getDydtansWszystkichSpacerow()));
+
+            ui->rowerCzasEdit->setText(QString::number(m_ksiazka.getCzasWszystkichRowerow()));
+            ui->rowerDystansEdit->setText(QString::number(m_ksiazka.getDydtansWszystkichRowerow()));
+
+            ui->plywanieCzasEdit->setText(QString::number(m_ksiazka.getCzasWszystkichPlywan()));
+            ui->plywanieDystansEdit->setText(QString::number(m_ksiazka.getDydtansWszystkichPlywan()));
+
+            ui->lacznyCzasCardioEdit->setText(QString::number(m_ksiazka.getCzasWszystkichTreningowCardio()));
+            ui->lacznyDystansCardioEdit->setText(QString::number(m_ksiazka.getDydtansWszystkichTreningowCardio()));
 
             AnulujZapisz();
 
