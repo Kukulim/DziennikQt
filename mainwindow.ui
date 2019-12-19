@@ -40,7 +40,8 @@
   <property name="styleSheet">
    <string notr="true">font: 75 italic 10pt &quot;Arimo&quot;;
 color: white;
-background-color:rgb(47, 47, 47)
+background-color:rgb(47, 47, 47);
+
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -51,35 +52,43 @@ background-color:rgb(47, 47, 47)
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="styleSheet">
-       <string notr="true">background-color:rgb(47, 47, 47)</string>
+       <string notr="true">background-color:rgb(47, 47, 47);
+</string>
       </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
       <widget class="QWidget" name="page">
        <property name="styleSheet">
-        <string notr="true"/>
+        <string notr="true">#page {background-image:url(:/images/tlo.jpg);}</string>
        </property>
        <layout class="QGridLayout" name="gridLayout_2">
-        <item row="0" column="1">
-         <widget class="QLabel" name="label_12">
-          <property name="text">
-           <string>Kaledarz:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <widget class="QLabel" name="label_13">
+        <item row="1" column="1">
+         <widget class="QCalendarWidget" name="calendarWidget">
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">background-color:rgb(65, 65, 65);
+border: 1px solid  rgb(61, 30, 0);
+alternate-background-color: transparent;
+selection-background-color:transparent;
+background-color:transparent;
+</string>
           </property>
-          <property name="text">
-           <string>Statystyki:</string>
+          <property name="gridVisible">
+           <bool>true</bool>
+          </property>
+          <property name="selectionMode">
+           <enum>QCalendarWidget::SingleSelection</enum>
+          </property>
+          <property name="dateEditEnabled">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
         <item row="0" column="0">
          <widget class="QLabel" name="label_11">
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
           <property name="text">
            <string>Treningi:</string>
           </property>
@@ -95,6 +104,9 @@ background-color:rgb(47, 47, 47)
           </property>
           <item>
            <widget class="QLabel" name="label_15">
+            <property name="styleSheet">
+             <string notr="true">background-color:transparent;</string>
+            </property>
             <property name="text">
              <string>Trening Silowy:</string>
             </property>
@@ -102,45 +114,15 @@ background-color:rgb(47, 47, 47)
           </item>
           <item>
            <widget class="QLabel" name="label_14">
+            <property name="styleSheet">
+             <string notr="true">background-color:transparent;</string>
+            </property>
             <property name="text">
              <string>Trening Cardio:</string>
             </property>
            </widget>
           </item>
          </layout>
-        </item>
-        <item row="1" column="1">
-         <widget class="QCalendarWidget" name="calendarWidget">
-          <property name="styleSheet">
-           <string notr="true">background-color:rgb(65, 65, 65);
-border: 1px solid  rgb(61, 30, 0);
-alternate-background-color: rgb(42, 42, 42);
-selection-background-color:transparent;
-</string>
-          </property>
-          <property name="gridVisible">
-           <bool>true</bool>
-          </property>
-          <property name="selectionMode">
-           <enum>QCalendarWidget::SingleSelection</enum>
-          </property>
-          <property name="dateEditEnabled">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0" rowspan="4">
-         <widget class="QListWidget" name="listWidget">
-          <property name="minimumSize">
-           <size>
-            <width>400</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">border: 1px solid  rgb(61, 30, 0);</string>
-          </property>
-         </widget>
         </item>
         <item row="4" column="1">
          <layout class="QHBoxLayout" name="horizontalLayoutStatystyki">
@@ -163,6 +145,9 @@ selection-background-color:transparent;
             </property>
             <item row="2" column="0">
              <widget class="QLabel" name="label_19">
+              <property name="styleSheet">
+               <string notr="true">background-color:transparent;</string>
+              </property>
               <property name="text">
                <string>Data:</string>
               </property>
@@ -170,6 +155,9 @@ selection-background-color:transparent;
             </item>
             <item row="4" column="1">
              <widget class="QLabel" name="label_18">
+              <property name="styleSheet">
+               <string notr="true">background-color:transparent;</string>
+              </property>
               <property name="text">
                <string>Wszystkie treningi:</string>
               </property>
@@ -177,6 +165,9 @@ selection-background-color:transparent;
             </item>
             <item row="6" column="0">
              <widget class="QLabel" name="label_26">
+              <property name="styleSheet">
+               <string notr="true">background-color:transparent;</string>
+              </property>
               <property name="text">
                <string>Laczna objetosc:</string>
               </property>
@@ -202,6 +193,9 @@ color:rgb(0, 255, 0)</string>
             </item>
             <item row="5" column="0">
              <widget class="QLabel" name="label_21">
+              <property name="styleSheet">
+               <string notr="true">background-color:transparent;</string>
+              </property>
               <property name="text">
                <string>Ilosc treningow:</string>
               </property>
@@ -209,6 +203,9 @@ color:rgb(0, 255, 0)</string>
             </item>
             <item row="1" column="1">
              <widget class="QLabel" name="label_16">
+              <property name="styleSheet">
+               <string notr="true">background-color:transparent;</string>
+              </property>
               <property name="text">
                <string>Ostatni trening:</string>
               </property>
@@ -217,7 +214,7 @@ color:rgb(0, 255, 0)</string>
             <item row="6" column="1">
              <widget class="QLineEdit" name="wszystkieTreningiSiloweObjetoscEdit">
               <property name="styleSheet">
-               <string notr="true">background-color:rgb(76, 100, 66);;
+               <string notr="true">background-color:rgb(36, 53, 33);;
 border: 1px solid gray;
 color:rgb(0, 255, 0)</string>
               </property>
@@ -225,6 +222,9 @@ color:rgb(0, 255, 0)</string>
             </item>
             <item row="3" column="0">
              <widget class="QLabel" name="label_20">
+              <property name="styleSheet">
+               <string notr="true">background-color:transparent;</string>
+              </property>
               <property name="text">
                <string>Objetosc:</string>
               </property>
@@ -263,6 +263,9 @@ color:yellow;</string>
             </item>
             <item row="1" column="0">
              <widget class="QLabel" name="label_17">
+              <property name="styleSheet">
+               <string notr="true">background-color:transparent;</string>
+              </property>
               <property name="text">
                <string>Bieganie:</string>
               </property>
@@ -285,6 +288,9 @@ color:yellow;</string>
             </item>
             <item row="2" column="0">
              <widget class="QLabel" name="label_24">
+              <property name="styleSheet">
+               <string notr="true">background-color:transparent;</string>
+              </property>
               <property name="text">
                <string>Spacer:</string>
               </property>
@@ -334,6 +340,9 @@ color:yellow;</string>
             </item>
             <item row="4" column="0">
              <widget class="QLabel" name="label_22">
+              <property name="styleSheet">
+               <string notr="true">background-color:transparent;</string>
+              </property>
               <property name="text">
                <string>Plywanie:</string>
               </property>
@@ -371,6 +380,9 @@ color:yellow;</string>
             </item>
             <item row="3" column="0">
              <widget class="QLabel" name="label_23">
+              <property name="styleSheet">
+               <string notr="true">background-color:transparent;</string>
+              </property>
               <property name="text">
                <string>Jazda rowerem:</string>
               </property>
@@ -378,6 +390,9 @@ color:yellow;</string>
             </item>
             <item row="5" column="0">
              <widget class="QLabel" name="label_25">
+              <property name="styleSheet">
+               <string notr="true">background-color:transparent;</string>
+              </property>
               <property name="text">
                <string>Suma:</string>
               </property>
@@ -400,6 +415,9 @@ color:yellow;</string>
             </item>
             <item row="0" column="2">
              <widget class="QLabel" name="label_27">
+              <property name="styleSheet">
+               <string notr="true">background-color:transparent;</string>
+              </property>
               <property name="text">
                <string>Dystans(km):</string>
               </property>
@@ -407,6 +425,9 @@ color:yellow;</string>
             </item>
             <item row="0" column="1">
              <widget class="QLabel" name="label_28">
+              <property name="styleSheet">
+               <string notr="true">background-color:transparent;</string>
+              </property>
               <property name="text">
                <string>Czas(min):</string>
               </property>
@@ -476,12 +497,53 @@ color:yellow;</string>
           </item>
          </layout>
         </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="label_13">
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
+          <property name="text">
+           <string>Statystyki:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="label_12">
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
+          <property name="text">
+           <string>Kaledarz:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" rowspan="4">
+         <widget class="QListWidget" name="listWidget">
+          <property name="minimumSize">
+           <size>
+            <width>400</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid  rgb(61, 30, 0);
+background-color:transparent;
+</string>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="page_2">
+       <property name="styleSheet">
+        <string notr="true">#page_2 {background-image:url(:/images/silowy.jpg);}</string>
+       </property>
        <layout class="QGridLayout" name="gridLayout_4">
         <item row="12" column="9">
          <widget class="QCheckBox" name="czyzaliczonecw_12">
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
           <property name="text">
            <string>Zaliczone</string>
           </property>
@@ -652,6 +714,9 @@ border: 1px solid gray;</string>
         </item>
         <item row="6" column="9">
          <widget class="QCheckBox" name="czyzaliczonecw_6">
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
           <property name="text">
            <string>Zaliczone</string>
           </property>
@@ -854,7 +919,8 @@ border: 1px solid gray;</string>
           </property>
           <property name="styleSheet">
            <string notr="true">background-color:rgb(98, 98, 98);
-border: 1px solid gray;</string>
+border: 1px solid gray;
+</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -884,7 +950,7 @@ border: 1px solid gray;</string>
         <item row="2" column="9">
          <widget class="QCheckBox" name="czyzaliczonecw_2">
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">background-color:transparent;</string>
           </property>
           <property name="text">
            <string>Zaliczone</string>
@@ -1011,6 +1077,9 @@ border: 1px solid gray;</string>
         </item>
         <item row="3" column="9">
          <widget class="QCheckBox" name="czyzaliczonecw_3">
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
           <property name="text">
            <string>Zaliczone</string>
           </property>
@@ -1553,6 +1622,9 @@ border: 1px solid gray;</string>
         </item>
         <item row="11" column="9">
          <widget class="QCheckBox" name="czyzaliczonecw_11">
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
           <property name="text">
            <string>Zaliczone</string>
           </property>
@@ -1612,6 +1684,9 @@ border: 1px solid gray;</string>
         </item>
         <item row="4" column="9">
          <widget class="QCheckBox" name="czyzaliczonecw_4">
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
           <property name="text">
            <string>Zaliczone</string>
           </property>
@@ -1880,6 +1955,9 @@ border: 1px solid gray;</string>
         </item>
         <item row="1" column="9">
          <widget class="QCheckBox" name="czyzaliczonecw">
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
           <property name="text">
            <string>Zaliczone</string>
           </property>
@@ -2034,6 +2112,9 @@ border: 1px solid gray;</string>
         </item>
         <item row="7" column="9">
          <widget class="QCheckBox" name="czyzaliczonecw_7">
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
           <property name="text">
            <string>Zaliczone</string>
           </property>
@@ -2094,6 +2175,9 @@ border: 1px solid gray;</string>
         </item>
         <item row="0" column="2">
          <widget class="QLabel" name="label_2">
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
           <property name="text">
            <string>Ilosc serii:</string>
           </property>
@@ -2118,6 +2202,9 @@ border: 1px solid gray;</string>
             <bold>false</bold>
            </font>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
           <property name="text">
            <string>Laczna objetosc treningu:</string>
           </property>
@@ -2125,6 +2212,9 @@ border: 1px solid gray;</string>
         </item>
         <item row="10" column="9">
          <widget class="QCheckBox" name="czyzaliczonecw_10">
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
           <property name="text">
            <string>Zaliczone</string>
           </property>
@@ -2132,6 +2222,9 @@ border: 1px solid gray;</string>
         </item>
         <item row="0" column="4">
          <widget class="QLabel" name="label_3">
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
           <property name="text">
            <string>Ilosc powtorzen:</string>
           </property>
@@ -2285,6 +2378,9 @@ border: 1px solid gray;</string>
         </item>
         <item row="0" column="0">
          <widget class="QLabel" name="label">
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
           <property name="text">
            <string>Rodzaj Ćwiczenia:</string>
           </property>
@@ -2329,6 +2425,9 @@ border: 1px solid gray;</string>
         </item>
         <item row="0" column="7">
          <widget class="QLabel" name="label_9">
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
           <property name="text">
            <string>Objetosc:</string>
           </property>
@@ -2623,6 +2722,9 @@ border: 1px solid gray;</string>
         </item>
         <item row="0" column="9">
          <widget class="QDateEdit" name="dataEdit">
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
           <property name="calendarPopup">
            <bool>true</bool>
           </property>
@@ -2630,6 +2732,9 @@ border: 1px solid gray;</string>
         </item>
         <item row="9" column="9">
          <widget class="QCheckBox" name="czyzaliczonecw_9">
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
           <property name="text">
            <string>Zaliczone</string>
           </property>
@@ -2657,6 +2762,9 @@ border: 1px solid gray;</string>
         </item>
         <item row="8" column="9">
          <widget class="QCheckBox" name="czyzaliczonecw_8">
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
           <property name="text">
            <string>Zaliczone</string>
           </property>
@@ -2791,6 +2899,9 @@ border: 1px solid gray;</string>
         </item>
         <item row="5" column="9">
          <widget class="QCheckBox" name="czyzaliczonecw_5">
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
           <property name="text">
            <string>Zaliczone</string>
           </property>
@@ -2834,6 +2945,9 @@ border: 1px solid gray;</string>
         </item>
         <item row="0" column="5">
          <widget class="QLabel" name="label_4">
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
           <property name="text">
            <string>Ciezar:</string>
           </property>
@@ -3097,9 +3211,21 @@ border: 1px solid gray;</string>
        </layout>
       </widget>
       <widget class="QWidget" name="page_3">
+       <property name="styleSheet">
+        <string notr="true">#page_3 {background-image:url(:/images/images/cardio.jpg);}</string>
+       </property>
        <layout class="QGridLayout" name="gridLayout_5">
         <item row="3" column="1">
          <widget class="QLabel" name="label_8">
+          <property name="maximumSize">
+           <size>
+            <width>120</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
           <property name="text">
            <string>Data:</string>
           </property>
@@ -3107,6 +3233,15 @@ border: 1px solid gray;</string>
         </item>
         <item row="2" column="1">
          <widget class="QLabel" name="label_7">
+          <property name="maximumSize">
+           <size>
+            <width>120</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
           <property name="text">
            <string>Czas trwania:</string>
           </property>
@@ -3169,6 +3304,15 @@ border: 1px solid gray;</string>
         </item>
         <item row="0" column="1">
          <widget class="QLabel" name="label_5">
+          <property name="maximumSize">
+           <size>
+            <width>120</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
           <property name="text">
            <string>Rodzaj cwiczenia:     </string>
           </property>
@@ -3176,6 +3320,15 @@ border: 1px solid gray;</string>
         </item>
         <item row="1" column="1">
          <widget class="QLabel" name="label_6">
+          <property name="maximumSize">
+           <size>
+            <width>120</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:transparent;</string>
+          </property>
           <property name="text">
            <string>Dystans:</string>
           </property>
