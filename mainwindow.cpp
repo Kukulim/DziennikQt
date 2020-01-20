@@ -4,7 +4,7 @@
 #include <QPushButton>
 #include <QString>
 #include <QMessageBox>
-#include <QTextCharFormat>
+#include <QFileDialog>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -17,9 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->buttonBox->button(QDialogButtonBox::Apply)->setText("Oblicz objetosc");
     ui->buttonBox->button(QDialogButtonBox::RestoreDefaults)->setText("Przywroc domyslne");
     ui->buttonBoxCardio->button(QDialogButtonBox::Ok)->setText("Zapisz");
-    ui->buttonBox->button(QDialogButtonBox::Reset)->setText("Poprzedni trening");
     setCentralWidget(ui->stackedWidget);
-
 }
 
 MainWindow::~MainWindow()
@@ -74,6 +72,23 @@ void MainWindow::OkZapiszCardio()
     }
     zaznaczonyKolor.setForeground(Qt::black);
     ui->calendarWidget->setDateTextFormat(ui->calendarWidget->selectedDate(),zaznaczonyKolor);
+
+    m_ksiazka.setDydtansWszystkichRodzaji();
+    ui->bieganieCzasEdit->setText(QString::number(m_ksiazka.getCzasWszystkichBiegow()));
+    ui->bieganieDystansEdit->setText(QString::number(m_ksiazka.getDydtansWszystkichBiegow()));
+
+    ui->spacerCzasEdit->setText(QString::number(m_ksiazka.getCzasWszystkichSpacerow()));
+    ui->spacerDystansEdit->setText(QString::number(m_ksiazka.getDydtansWszystkichSpacerow()));
+
+    ui->rowerCzasEdit->setText(QString::number(m_ksiazka.getCzasWszystkichRowerow()));
+    ui->rowerDystansEdit->setText(QString::number(m_ksiazka.getDydtansWszystkichRowerow()));
+
+    ui->plywanieCzasEdit->setText(QString::number(m_ksiazka.getCzasWszystkichPlywan()));
+    ui->plywanieDystansEdit->setText(QString::number(m_ksiazka.getDydtansWszystkichPlywan()));
+
+    ui->lacznyCzasCardioEdit->setText(QString::number(m_ksiazka.getCzasWszystkichTreningowCardio()));
+    ui->lacznyDystansCardioEdit->setText(QString::number(m_ksiazka.getDydtansWszystkichTreningowCardio()));
+
     AnulujZapisz();
 
 }
@@ -90,87 +105,28 @@ void MainWindow::PrzywrocDomyslneCardio()
     ui->dataCardioEdit->setDate(wpis->getDataTreninguCardio());
 }
 
-void MainWindow::WczytajPoprzedniTrening()
-{
+//void MainWindow::WczytajPoprzedniTrening()
+//{
 
-    if (wpisMapa.size()>0)
-        {
-        int pozycja =0;
-        pozycja= ui->listWidget->currentRow();
-            for(int i =1;i<=pozycja;i++)
-            {
-            auto listItem = ui->listWidget->item(pozycja-i);
-            auto wpis = wpisMapa.value(listItem);
-            if(wpis)
-                {
-                ui->nazwacwEdit->setText(wpis->getNazwaCwiczenia(0));
-                ui->nazwacwEdit_2->setText(wpis->getNazwaCwiczenia(1));
-                ui->nazwacwEdit_3->setText(wpis->getNazwaCwiczenia(2));
-                ui->nazwacwEdit_4->setText(wpis->getNazwaCwiczenia(3));
-                ui->nazwacwEdit_5->setText(wpis->getNazwaCwiczenia(4));
-                ui->nazwacwEdit_6->setText(wpis->getNazwaCwiczenia(5));
-                ui->nazwacwEdit_7->setText(wpis->getNazwaCwiczenia(6));
-                ui->nazwacwEdit_8->setText(wpis->getNazwaCwiczenia(7));
-                ui->nazwacwEdit_9->setText(wpis->getNazwaCwiczenia(8));
-                ui->nazwacwEdit_10->setText(wpis->getNazwaCwiczenia(9));
-                ui->nazwacwEdit_11->setText(wpis->getNazwaCwiczenia(10));
-                ui->nazwacwEdit_12->setText(wpis->getNazwaCwiczenia(11));
-                ui->iloscserEdit->setCurrentIndex(wpis->getIloscSerii(0));
-                ui->iloscserEdit_3->setCurrentIndex(wpis->getIloscSerii(1));
-                ui->iloscserEdit_4->setCurrentIndex(wpis->getIloscSerii(2));
-                ui->iloscserEdit_5->setCurrentIndex(wpis->getIloscSerii(3));
-                ui->iloscserEdit_6->setCurrentIndex(wpis->getIloscSerii(4));
-                ui->iloscserEdit_7->setCurrentIndex(wpis->getIloscSerii(5));
-                ui->iloscserEdit_8->setCurrentIndex(wpis->getIloscSerii(6));
-                ui->iloscserEdit_9->setCurrentIndex(wpis->getIloscSerii(7));
-                ui->iloscserEdit_10->setCurrentIndex(wpis->getIloscSerii(8));
-                ui->iloscserEdit_11->setCurrentIndex(wpis->getIloscSerii(9));
-                ui->iloscserEdit_12->setCurrentIndex(wpis->getIloscSerii(10));
-                ui->iloscserEdit_13->setCurrentIndex(wpis->getIloscSerii(11));
-                ui->iloscpowEdit->setCurrentIndex(wpis->getIloscPowtorzen(0));
-                ui->iloscpowEdit_3->setCurrentIndex(wpis->getIloscPowtorzen(1));
-                ui->iloscpowEdit_4->setCurrentIndex(wpis->getIloscPowtorzen(2));
-                ui->iloscpowEdit_5->setCurrentIndex(wpis->getIloscPowtorzen(3));
-                ui->iloscpowEdit_6->setCurrentIndex(wpis->getIloscPowtorzen(4));
-                ui->iloscpowEdit_7->setCurrentIndex(wpis->getIloscPowtorzen(5));
-                ui->iloscpowEdit_8->setCurrentIndex(wpis->getIloscPowtorzen(6));
-                ui->iloscpowEdit_9->setCurrentIndex(wpis->getIloscPowtorzen(7));
-                ui->iloscpowEdit_10->setCurrentIndex(wpis->getIloscPowtorzen(8));
-                ui->iloscpowEdit_11->setCurrentIndex(wpis->getIloscPowtorzen(9));
-                ui->iloscpowEdit_12->setCurrentIndex(wpis->getIloscPowtorzen(10));
-                ui->iloscpowEdit_13->setCurrentIndex(wpis->getIloscPowtorzen(11));
-                ui->ciezarEdit->setText(QString::number(wpis->getCiezar(0)));
-                ui->ciezarEdit_3->setText(QString::number(wpis->getCiezar(1)));
-                ui->ciezarEdit_4->setText(QString::number(wpis->getCiezar(2)));
-                ui->ciezarEdit_5->setText(QString::number(wpis->getCiezar(3)));
-                ui->ciezarEdit_6->setText(QString::number(wpis->getCiezar(4)));
-                ui->ciezarEdit_7->setText(QString::number(wpis->getCiezar(5)));
-                ui->ciezarEdit_8->setText(QString::number(wpis->getCiezar(6)));
-                ui->ciezarEdit_9->setText(QString::number(wpis->getCiezar(7)));
-                ui->ciezarEdit_10->setText(QString::number(wpis->getCiezar(8)));
-                ui->ciezarEdit_11->setText(QString::number(wpis->getCiezar(9)));
-                ui->ciezarEdit_12->setText(QString::number(wpis->getCiezar(10)));
-                ui->ciezarEdit_13->setText(QString::number(wpis->getCiezar(11)));
-                ui->czyzaliczonecw->setChecked(wpis->getCzyZaliczone(0));
-                ui->czyzaliczonecw_2->setChecked(wpis->getCzyZaliczone(1));
-                ui->czyzaliczonecw_3->setChecked(wpis->getCzyZaliczone(2));
-                ui->czyzaliczonecw_4->setChecked(wpis->getCzyZaliczone(3));
-                ui->czyzaliczonecw_5->setChecked(wpis->getCzyZaliczone(4));
-                ui->czyzaliczonecw_6->setChecked(wpis->getCzyZaliczone(5));
-                ui->czyzaliczonecw_7->setChecked(wpis->getCzyZaliczone(6));
-                ui->czyzaliczonecw_8->setChecked(wpis->getCzyZaliczone(7));
-                ui->czyzaliczonecw_9->setChecked(wpis->getCzyZaliczone(8));
-                ui->czyzaliczonecw_10->setChecked(wpis->getCzyZaliczone(9));
-                ui->czyzaliczonecw_11->setChecked(wpis->getCzyZaliczone(10));
-                ui->czyzaliczonecw_12->setChecked(wpis->getCzyZaliczone(11));
-                WyswietlObjetosc();
-                break;
-                }
+//    if (wpisMapa.size()>0)
+//        {
+//        int pozycja =0;
+//        pozycja= ui->listWidget->currentRow();
+//            for(int i =1;i<=pozycja;i++)
+//            {
+//            auto listItem = ui->listWidget->item(pozycja-i);
+//            auto wpis = wpisMapa.value(listItem);
+//            if(wpis)
+//                {
+//                ui->ostatniTreningSilowyDataEdit->setText(wpis->getDataCwiczenia().toString());
+//                ui->ostatniTreningSilowyObjetoscEdit->setText(QString::number(wpis->getObjetoscTreningu()));
+//                break;
+//                }
 
-            }
-        }
+//            }
+//        }
 
-}
+//}
 
 void MainWindow::on_actionUsun_triggered()
 {
@@ -203,7 +159,9 @@ void MainWindow::on_actionUsun_triggered()
             m_ksiazka.skasujKontener(wpis);
             wpisMapa.remove(listItem);
             delete listItem;
-
+            ui->wszystkieTreningiSiloweIloscEdit->setText(QString::number(m_ksiazka.getIloscTreningowSilowych()));
+            m_ksiazka.setObjetoscWszystkichTreningowSilowych();
+            ui->wszystkieTreningiSiloweObjetoscEdit->setText(QString::number(m_ksiazka.getObjetoscWszystkichTreningowSilowych()));
             AnulujZapisz();
         }
     }
@@ -234,6 +192,22 @@ void MainWindow::on_actionUsun_triggered()
             m_ksiazka.skasujKontenerCardio(wpis2);
             wpisMapaCardio.remove(listItem);
             delete listItem;
+
+            m_ksiazka.setDydtansWszystkichRodzaji();
+            ui->bieganieCzasEdit->setText(QString::number(m_ksiazka.getCzasWszystkichBiegow()));
+            ui->bieganieDystansEdit->setText(QString::number(m_ksiazka.getDydtansWszystkichBiegow()));
+
+            ui->spacerCzasEdit->setText(QString::number(m_ksiazka.getCzasWszystkichSpacerow()));
+            ui->spacerDystansEdit->setText(QString::number(m_ksiazka.getDydtansWszystkichSpacerow()));
+
+            ui->rowerCzasEdit->setText(QString::number(m_ksiazka.getCzasWszystkichRowerow()));
+            ui->rowerDystansEdit->setText(QString::number(m_ksiazka.getDydtansWszystkichRowerow()));
+
+            ui->plywanieCzasEdit->setText(QString::number(m_ksiazka.getCzasWszystkichPlywan()));
+            ui->plywanieDystansEdit->setText(QString::number(m_ksiazka.getDydtansWszystkichPlywan()));
+
+            ui->lacznyCzasCardioEdit->setText(QString::number(m_ksiazka.getCzasWszystkichTreningowCardio()));
+            ui->lacznyDystansCardioEdit->setText(QString::number(m_ksiazka.getDydtansWszystkichTreningowCardio()));
 
             AnulujZapisz();
 
@@ -334,7 +308,6 @@ void MainWindow::Okzapisz()
     wpis->setCzyZaliczone(ui->czyzaliczonecw_10->checkState(),9);
     wpis->setCzyZaliczone(ui->czyzaliczonecw_11->checkState(),10);
     wpis->setCzyZaliczone(ui->czyzaliczonecw_12->checkState(),11);
-    wpis->setObjetoscTreningu(ui->objetosccalaEdit->text().toInt());
 
     listItem->setText((wpis->getDataCwiczenia().toString())+" "+(wpis->getNazwaTreningu()));
     listItem->setForeground(Qt::green);
@@ -354,6 +327,17 @@ void MainWindow::Okzapisz()
 
     zaznaczonyKolor.setForeground(Qt::black);
     ui->calendarWidget->setDateTextFormat(ui->calendarWidget->selectedDate(),zaznaczonyKolor);
+    ui->wszystkieTreningiSiloweIloscEdit->setText(QString::number(m_ksiazka.getIloscTreningowSilowych()));
+
+    WyswietlObjetosc();
+    wpis->setObjetoscTreningu(ui->objetosccalaEdit->text().toInt());
+
+    ui->ostatniTreningSilowyDataEdit->setText(wpis->getDataCwiczenia().toString());
+    ui->ostatniTreningSilowyObjetoscEdit->setText(QString::number(wpis->getObjetoscTreningu()));
+
+    m_ksiazka.setObjetoscWszystkichTreningowSilowych();
+    ui->wszystkieTreningiSiloweObjetoscEdit->setText(QString::number(m_ksiazka.getObjetoscWszystkichTreningowSilowych()));
+
     AnulujZapisz();
 }
 
@@ -472,7 +456,6 @@ void MainWindow::wlaczPolaczenia()
     connect(ui->buttonBox->button(QDialogButtonBox::Ok),&QPushButton::clicked,this,&MainWindow::Okzapisz);
     connect(ui->buttonBox->button(QDialogButtonBox::RestoreDefaults),&QPushButton::clicked,this,&MainWindow::PrzywrocDomyslne);
     connect(ui->buttonBox->button(QDialogButtonBox::Apply),&QPushButton::clicked,this,&MainWindow::WyswietlObjetosc);
-    connect(ui->buttonBox->button(QDialogButtonBox::Reset),&QPushButton::clicked,this,&MainWindow::WczytajPoprzedniTrening);
     connect(ui->buttonBoxCardio->button(QDialogButtonBox::Cancel),&QPushButton::clicked,this,&MainWindow::AnulujZapisz);
     connect(ui->buttonBoxCardio->button(QDialogButtonBox::Ok),&QPushButton::clicked,this,&MainWindow::OkZapiszCardio);
 }
@@ -480,4 +463,110 @@ void MainWindow::wlaczPolaczenia()
 void MainWindow::on_listWidget_itemDoubleClicked()
 {
     on_actionEdytuj_triggered();
+}
+
+void MainWindow::on_ZestawA_clicked()
+{
+    m_ksiazka.setWyznacznikZestawuCwiczen('A');
+    ui->ZestawA->setDown(true);
+    ui->ZestawB->setDown(false);
+}
+
+void MainWindow::on_ZestawB_clicked()
+{
+    m_ksiazka.setWyznacznikZestawuCwiczen('B');
+    ui->ZestawB->setDown(true);
+    ui->ZestawA->setDown(false);
+}
+
+void MainWindow::on_ZapiszZestaw_clicked()
+{
+    if(m_ksiazka.getWyznacznikZestawuCwiczen()=='A')
+    {
+        m_ksiazka.setZestawA(ui->nazwacwEdit->text(),0);
+        m_ksiazka.setZestawA(ui->nazwacwEdit_2->text(),1);
+        m_ksiazka.setZestawA(ui->nazwacwEdit_3->text(),2);
+        m_ksiazka.setZestawA(ui->nazwacwEdit_4->text(),3);
+        m_ksiazka.setZestawA(ui->nazwacwEdit_5->text(),4);
+        m_ksiazka.setZestawA(ui->nazwacwEdit_6->text(),5);
+        m_ksiazka.setZestawA(ui->nazwacwEdit_7->text(),6);
+        m_ksiazka.setZestawA(ui->nazwacwEdit_8->text(),7);
+        m_ksiazka.setZestawA(ui->nazwacwEdit_9->text(),8);
+        m_ksiazka.setZestawA(ui->nazwacwEdit_10->text(),9);
+        m_ksiazka.setZestawA(ui->nazwacwEdit_11->text(),10);
+        m_ksiazka.setZestawA(ui->nazwacwEdit_12->text(),11);
+    }
+    if(m_ksiazka.getWyznacznikZestawuCwiczen()=='B')
+    {
+        m_ksiazka.setZestawB(ui->nazwacwEdit->text(),0);
+        m_ksiazka.setZestawB(ui->nazwacwEdit_2->text(),1);
+        m_ksiazka.setZestawB(ui->nazwacwEdit_3->text(),2);
+        m_ksiazka.setZestawB(ui->nazwacwEdit_4->text(),3);
+        m_ksiazka.setZestawB(ui->nazwacwEdit_5->text(),4);
+        m_ksiazka.setZestawB(ui->nazwacwEdit_6->text(),5);
+        m_ksiazka.setZestawB(ui->nazwacwEdit_7->text(),6);
+        m_ksiazka.setZestawB(ui->nazwacwEdit_8->text(),7);
+        m_ksiazka.setZestawB(ui->nazwacwEdit_9->text(),8);
+        m_ksiazka.setZestawB(ui->nazwacwEdit_10->text(),9);
+        m_ksiazka.setZestawB(ui->nazwacwEdit_11->text(),10);
+        m_ksiazka.setZestawB(ui->nazwacwEdit_12->text(),11);
+    }
+}
+
+void MainWindow::on_WczytajZestaw_clicked()
+{
+    if(m_ksiazka.getWyznacznikZestawuCwiczen()=='A')
+    {
+        ui->nazwacwEdit->setText(m_ksiazka.getZestawA(0));
+        ui->nazwacwEdit_2->setText(m_ksiazka.getZestawA(1));
+        ui->nazwacwEdit_3->setText(m_ksiazka.getZestawA(2));
+        ui->nazwacwEdit_4->setText(m_ksiazka.getZestawA(3));
+        ui->nazwacwEdit_5->setText(m_ksiazka.getZestawA(4));
+        ui->nazwacwEdit_6->setText(m_ksiazka.getZestawA(5));
+        ui->nazwacwEdit_7->setText(m_ksiazka.getZestawA(6));
+        ui->nazwacwEdit_8->setText(m_ksiazka.getZestawA(7));
+        ui->nazwacwEdit_9->setText(m_ksiazka.getZestawA(8));
+        ui->nazwacwEdit_10->setText(m_ksiazka.getZestawA(9));
+        ui->nazwacwEdit_11->setText(m_ksiazka.getZestawA(10));
+        ui->nazwacwEdit_12->setText(m_ksiazka.getZestawA(11));
+    }
+    if(m_ksiazka.getWyznacznikZestawuCwiczen()=='B')
+    {
+        ui->nazwacwEdit->setText(m_ksiazka.getZestawB(0));
+        ui->nazwacwEdit_2->setText(m_ksiazka.getZestawB(1));
+        ui->nazwacwEdit_3->setText(m_ksiazka.getZestawB(2));
+        ui->nazwacwEdit_4->setText(m_ksiazka.getZestawB(3));
+        ui->nazwacwEdit_5->setText(m_ksiazka.getZestawB(4));
+        ui->nazwacwEdit_6->setText(m_ksiazka.getZestawB(5));
+        ui->nazwacwEdit_7->setText(m_ksiazka.getZestawB(6));
+        ui->nazwacwEdit_8->setText(m_ksiazka.getZestawB(7));
+        ui->nazwacwEdit_9->setText(m_ksiazka.getZestawB(8));
+        ui->nazwacwEdit_10->setText(m_ksiazka.getZestawB(9));
+        ui->nazwacwEdit_11->setText(m_ksiazka.getZestawB(10));
+        ui->nazwacwEdit_12->setText(m_ksiazka.getZestawB(11));
+    }
+}
+
+void MainWindow::openFile()
+{
+    QString fileName = QFileDialog::getOpenFileName(this);
+    if (!fileName.isEmpty())
+        m_ksiazka.readFromFile(fileName);
+}
+
+void MainWindow::saveFile()
+{
+    QString fileName = QFileDialog::getSaveFileName(this);
+    if (!fileName.isEmpty())
+        m_ksiazka.writeToFile(fileName);
+}
+
+void MainWindow::on_actionWczytaj_triggered()
+{
+    openFile();
+}
+
+void MainWindow::on_actionZapisz_triggered()
+{
+    saveFile();
 }

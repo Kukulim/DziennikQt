@@ -5,6 +5,7 @@
 #include <QString>
 #include <QDate>
 #include <QVector>
+#include <QtCore>
 
 
 class Kontener : public QObject
@@ -38,11 +39,12 @@ public:
     int getObjetoscTreningu() const;
     void setObjetoscTreningu(int value);
 
+
 signals:
 
 public slots:
 
-private:
+    public:
 
     int iloscSerii[12]={0};
     int iloscPowtorzen[12]={0};
@@ -54,5 +56,61 @@ private:
     bool czyZaliczone[12]={false};
 
 };
+//inline QDataStream operator<<(QDataStream &stream,Kontener &daneKontener)
+//{
+
+//    for(int i=0;i<12;i++)
+//    {
+//        stream << daneKontener.iloscSerii[i];
+//    }
+//    for(int i=0;i<12;i++)
+//    {
+//        stream << daneKontener.iloscPowtorzen[i];
+//    }
+//    for(int i=0;i<12;i++)
+//    {
+//        stream << daneKontener.ciezar[i];
+//    }
+//    stream << daneKontener.objetoscTreningu;
+//    for(int i=0;i<12;i++)
+//    {
+//        stream << daneKontener.nazwaCwiczenia[i];
+//    }
+//    stream << daneKontener.nazwaTreningu;
+//    stream << daneKontener.dataCwiczenia;
+//    for(int i=0;i<12;i++)
+//    {
+//        stream << daneKontener.czyZaliczone[i];
+//    }
+//    return stream;
+//}
+//inline QDataStream &operator>>(QDataStream &stream, Kontener &daneKontener)
+//{
+
+//    for(int i=0;i<12;i++)
+//    {
+//        stream >> daneKontener.iloscSerii[i];
+//    }
+//    for(int i=0;i<12;i++)
+//    {
+//        stream >> daneKontener.iloscPowtorzen[i];
+//    }
+//    for(int i=0;i<12;i++)
+//    {
+//        stream >> daneKontener.ciezar[i];
+//    }
+//    stream >> daneKontener.objetoscTreningu;
+//    for(int i=0;i<12;i++)
+//    {
+//        stream >> daneKontener.nazwaCwiczenia[i];
+//    }
+//    stream >> daneKontener.nazwaTreningu;
+//    stream >> daneKontener.dataCwiczenia;
+//    for(int i=0;i<12;i++)
+//    {
+//        stream >> daneKontener.czyZaliczone[i];
+//    }
+//    return stream;
+//}
 
 #endif // KONTENER_H
