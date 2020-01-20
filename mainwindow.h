@@ -41,7 +41,7 @@ private slots:
 
     void PrzywrocDomyslneCardio();
 
-    //void WczytajPoprzedniTrening();
+    //void WczytajPoprzedniTrening(); Narazie niepotrzebne
 
     void on_listWidget_itemDoubleClicked();
 
@@ -52,6 +52,14 @@ private slots:
     void on_ZapiszZestaw_clicked();
 
     void on_WczytajZestaw_clicked();
+
+    void openFile();
+
+    void saveFile();
+
+    void on_actionWczytaj_triggered();
+
+    void on_actionZapisz_triggered();
 
 private:
     Ui::MainWindow *ui;

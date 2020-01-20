@@ -1,6 +1,7 @@
 #ifndef KSIAZKAKONTENER_H
 #define KSIAZKAKONTENER_H
 
+#include <QtCore>
 #include <QObject>
 #include <QVector>
 #include "kontener.h"
@@ -11,6 +12,7 @@ class KsiazkaKontener : public QObject
     Q_OBJECT
 public:
     explicit KsiazkaKontener(QObject *parent = nullptr);
+
     QVector<Kontener*> wynikWKsiazce;
     QVector<KontenerCardio*> wynikWKsiazceCardio;
 
@@ -54,6 +56,9 @@ public:
     double getDydtansWszystkichBiegow() const;
 
     void setDydtansWszystkichRodzaji();
+
+    void readFromFile(const QString &fileName);
+    void writeToFile(const QString &fileName);
 
 signals:
 public slots:

@@ -4,7 +4,7 @@
 #include <QPushButton>
 #include <QString>
 #include <QMessageBox>
-#include <QTextCharFormat>
+#include <QFileDialog>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -545,4 +545,28 @@ void MainWindow::on_WczytajZestaw_clicked()
         ui->nazwacwEdit_11->setText(m_ksiazka.getZestawB(10));
         ui->nazwacwEdit_12->setText(m_ksiazka.getZestawB(11));
     }
+}
+
+void MainWindow::openFile()
+{
+    QString fileName = QFileDialog::getOpenFileName(this);
+    if (!fileName.isEmpty())
+        m_ksiazka.readFromFile(fileName);
+}
+
+void MainWindow::saveFile()
+{
+    QString fileName = QFileDialog::getSaveFileName(this);
+    if (!fileName.isEmpty())
+        m_ksiazka.writeToFile(fileName);
+}
+
+void MainWindow::on_actionWczytaj_triggered()
+{
+    openFile();
+}
+
+void MainWindow::on_actionZapisz_triggered()
+{
+    saveFile();
 }

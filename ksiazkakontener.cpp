@@ -1,5 +1,7 @@
 #include "ksiazkakontener.h"
 
+#include <QMessageBox>
+
 KsiazkaKontener::KsiazkaKontener(QObject *parent) : QObject(parent)
 {
 
@@ -197,5 +199,34 @@ void KsiazkaKontener::setDydtansWszystkichRodzaji()
         czasWszystkichTreningowCardio=czasWszystkichBiegow+czasWszystkichPlywan+czasWszystkichRowerow+czasWszystkichSpacerow;
     }
 }
+void KsiazkaKontener::readFromFile(const QString &fileName)
+{
 
+
+    QFile file(fileName);
+
+    if (!file.open(QIODevice::ReadOnly)) {
+        return;
+    }
+
+    QVector<Kontener>nowy;
+    QDataStream in(&file);
+    in.setVersion(QDataStream::Qt_4_5);
+
+    //in >> nowy; TODO
+
+}
+
+void KsiazkaKontener::writeToFile(const QString &fileName)
+{
+    QFile file(fileName);
+
+    if (!file.open(QIODevice::WriteOnly)) {
+        return;
+    }
+
+    QDataStream out(&file);
+    out.setVersion(QDataStream::Qt_4_5);
+    out << wynikWKsiazce;
+}
 
